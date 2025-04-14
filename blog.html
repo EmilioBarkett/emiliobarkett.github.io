@@ -56,6 +56,54 @@
         nav a:hover {
             text-decoration: underline;
         }
+
+                /* Mobile responsiveness */
+                @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+            
+            .blog-content {
+                width: 100%;
+                padding-right: 0;
+            }
+            
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+        }
+        
+        /* Small phones */
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+            
+            nav {
+                margin-bottom: 20px;
+            }
+            
+            nav a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }    
+
     </style>
 </head>
 <body>
