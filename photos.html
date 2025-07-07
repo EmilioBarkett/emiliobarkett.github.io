@@ -51,7 +51,7 @@
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0;
+            gap: 15px;
             grid-auto-rows: 10px;
         }
 
@@ -195,7 +195,7 @@
 
             .photo-grid {
                 grid-template-columns: 1fr;
-                gap: 2px;
+                gap: 10px;
             }
 
             .photo-item.large {
@@ -215,39 +215,7 @@
             }
         }
 
-        /* Upload Area */
-        .upload-area {
-            border: 2px dashed #ccc;
-            border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 40px;
-            background: #f9f9f9;
-            transition: border-color 0.3s ease;
-        }
 
-        .upload-area:hover {
-            border-color: #999;
-        }
-
-        .upload-area input[type="file"] {
-            display: none;
-        }
-
-        .upload-btn {
-            background: #333;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-
-        .upload-btn:hover {
-            background: #555;
-        }
     </style>
 </head>
 <body>
@@ -258,14 +226,7 @@
             <a href="#">PORTFOLIO</a> > PATAGONIA
         </div>
 
-        <!-- Upload Area -->
-        <div class="upload-area">
-            <p style="margin-bottom: 20px; color: #666;">Click to upload your photos</p>
-            <input type="file" id="fileInput" multiple accept="image/*">
-            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
-                Choose Photos
-            </button>
-        </div>
+
 
         <!-- Photo Grid -->
         <div class="photo-grid" id="photoGrid">
@@ -399,43 +360,7 @@
             }
         });
 
-        // File upload functionality
-        const fileInput = document.getElementById('fileInput');
-        const photoGrid = document.getElementById('photoGrid');
 
-        fileInput.addEventListener('change', function(e) {
-            const files = e.target.files;
-            
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                if (file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(e) {
-                        const photoItem = document.createElement('div');
-                        const sizes = ['small', 'medium', 'large'];
-                        const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
-                        photoItem.className = `photo-item ${randomSize}`;
-                        photoItem.setAttribute('data-index', allImages.length);
-                        
-                        photoItem.innerHTML = `<img src="${e.target.result}" alt="Uploaded photo">`;
-                        
-                        photoGrid.appendChild(photoItem);
-                        
-                        // Add to images array
-                        allImages.push(e.target.result);
-                        
-                        // Add click event for modal
-                        photoItem.addEventListener('click', function() {
-                            currentIndex = parseInt(this.getAttribute('data-index'));
-                            showModal();
-                        });
-                    };
-                    
-                    reader.readAsDataURL(file);
-                }
-            }
-        });
 
         // Randomize photo sizes on load for variety
         function randomizePhotoSizes() {
