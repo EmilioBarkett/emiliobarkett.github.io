@@ -52,7 +52,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
-            grid-auto-rows: 10px;
+            grid-auto-rows: min-content;
         }
 
         .photo-item {
@@ -64,7 +64,7 @@
 
         .photo-item img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
             display: block;
             transition: all 0.3s ease;
@@ -88,18 +88,7 @@
             opacity: 1;
         }
 
-        /* Different sizes for masonry effect */
-        .photo-item.large {
-            grid-row-end: span 50;
-        }
 
-        .photo-item.medium {
-            grid-row-end: span 35;
-        }
-
-        .photo-item.small {
-            grid-row-end: span 25;
-        }
 
         /* Modal */
         .modal {
@@ -199,15 +188,15 @@
             }
 
             .photo-item.large {
-                grid-row-end: span 40;
+                /* No specific height constraints */
             }
 
             .photo-item.medium {
-                grid-row-end: span 30;
+                /* No specific height constraints */
             }
 
             .photo-item.small {
-                grid-row-end: span 20;
+                /* No specific height constraints */
             }
 
             .container {
@@ -230,36 +219,36 @@
 
         <!-- Photo Grid -->
         <div class="photo-grid" id="photoGrid">
-            <!-- Sample photos with different sizes -->
-            <div class="photo-item large" data-index="0">
-                <img src="photo archive/waianae-sunset.jpg" alt="Waianae Sunset">
+            <!-- Sample photos with natural aspect ratios -->
+            <div class="photo-item" data-index="0">
+                <img src="photo archive/waianae-sunset.jpg" alt="Rock climbing">
             </div>
 
-            <div class="photo-item medium" data-index="1">
+            <div class="photo-item" data-index="1">
                 <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mountain climbers">
             </div>
 
-            <div class="photo-item large" data-index="2">
+            <div class="photo-item" data-index="2">
                 <img src="https://images.unsplash.com/photo-1464822759844-d150baec3fd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mountain landscape">
             </div>
 
-            <div class="photo-item small" data-index="3">
+            <div class="photo-item" data-index="3">
                 <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Portrait">
             </div>
 
-            <div class="photo-item medium" data-index="4">
+            <div class="photo-item" data-index="4">
                 <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mountain peak">
             </div>
 
-            <div class="photo-item large" data-index="5">
+            <div class="photo-item" data-index="5">
                 <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Surfing">
             </div>
 
-            <div class="photo-item medium" data-index="6">
+            <div class="photo-item" data-index="6">
                 <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Ocean waves">
             </div>
 
-            <div class="photo-item small" data-index="7">
+            <div class="photo-item" data-index="7">
                 <img src="https://images.unsplash.com/photo-1464822759844-d150baec3fd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mountain vista">
             </div>
         </div>
@@ -364,15 +353,10 @@
 
         // Randomize photo sizes on load for variety
         function randomizePhotoSizes() {
-            const sizes = ['small', 'medium', 'large'];
-            photoItems.forEach(item => {
-                const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
-                item.className = `photo-item ${randomSize}`;
-            });
+            // No longer needed as photos maintain natural aspect ratios
         }
 
-        // Uncomment the line below if you want random sizes each time
-        // randomizePhotoSizes();
+        // Photos now maintain their natural aspect ratios
     </script>
 </body>
 </html>
