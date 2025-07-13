@@ -6,305 +6,189 @@
     <title>Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'PT Serif', sans-serif;
-            line-height: 1.6;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #fff;
-        }
-        
-        .container {
-            width: 85%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .blog-content {
-            width: 45%;
-            padding-right: 30px;
-        }
-        
-        h1 {
-            color: #3366cc;
-            font-size: 28px;
-            margin-bottom: 30px;
+            box-sizing: border-box;
         }
 
-        h2 {
-            color: #3366cc;
-            font-size: 22px;
-            margin-bottom: 10px;
+        body {
+            font-family: 'PT Serif', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
         }
-        
-        .blog-post {
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .navigation {
+            text-align: left;
             margin-bottom: 40px;
+            padding-bottom: 20px;
         }
-        
-        /* You can add navigation styling here if needed */
-        nav {
-            margin-bottom: 30px;
-        }
-        
-        nav a {
-            margin-right: 15px;
+
+        .back-link {
+            color: #333;
             text-decoration: none;
-            color: #3366cc;
+            font-size: 16px;
         }
-        
-        nav a:hover {
+
+        .back-link:hover {
             text-decoration: underline;
         }
 
-                /* Mobile responsiveness */
-                @media screen and (max-width: 768px) {
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: normal;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+
+
+        .posts-list {
+            margin-top: 40px;
+        }
+
+        .post-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .post-title {
+            margin-bottom: 8px;
+        }
+
+        .post-title a {
+            color: #c41e3a;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .post-title a:hover {
+            text-decoration: underline;
+        }
+
+        .post-date {
+            color: #666;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .post-description {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
             .container {
-                width: 90%;
-                padding: 15px;
+                padding: 20px 15px;
             }
             
-            .blog-content {
-                width: 100%;
-                padding-right: 0;
+            .page-title {
+                font-size: 36px;
             }
             
-            h1 {
-                font-size: 24px;
-                margin-bottom: 20px;
-            }
-            
-            h2 {
-                font-size: 20px;
+            .back-link {
+                font-size: 14px;
             }
         }
-        
-        /* Small phones */
-        @media screen and (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 10px;
-            }
-            
-            h1 {
-                font-size: 22px;
-            }
-            
-            h2 {
-                font-size: 18px;
-            }
-            
-            nav {
-                margin-bottom: 20px;
-            }
-            
-            nav a {
-                display: block;
-                margin-bottom: 10px;
-            }
-        }    
-
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- You can add your navigation here if needed -->
-        <nav>
-            <a href="index.html">← Main Page</a>
-            <!-- <a href="blog.html">Blog</a>
-            <a href="research.html">Research</a> -->
-            <!-- Add more navigation links as needed -->
+        <nav class="navigation">
+            <a href="#home" class="back-link">← Main Page</a>
         </nav>
-        <!--
-        <div class="blog-content">
-            <h2>Mechanistic Interpretability as Media Archaeology</h2>
-            <h4 class="date-header">May 13, 2025</h4>
 
-            <div class="blog-post">
-                
-                <p>In 1939, amateur archaeologist <a href="https://www.bbc.com/news/uk-england-suffolk-55877934">Basil Brown</a> uncovered one of England's most significant early medieval burial sites—<a href="https://www.youtube.com/watch?v=4AP832XfpsE">Sutton Hoo</a>. Brown and his colleagues weren't simply brushing away dirt to reveal static artifacts. They engaged in a painstaking process of interpretation, examining each discovered fragment with careful attention: a bit of tarnished metal here, the barely perceptible decayed outline of a massive ship there, and perhaps most significantly, the scattered, crushed remnants of what would later be recognized as an extraordinary <a href="https://youtu.be/zYk0GH5iFYI?si=2WlK8WiAWwDyZxli">warrior's helmet</a>. The challenge that confronted them wasn't merely locating these physical pieces—it was developing the methodological approach to make these fragments reveal their stories, to make them speak across the centuries.</p>
+        <h1 class="page-title">Blog</h1>
 
-                <p>This meticulous reconstruction embodies the very essence of archaeological practice: the disciplined art of extracting meaning from fragments, weaving together coherent narratives from tantalizingly incomplete evidence. It represents a peculiar kind of intellectual puzzle—one without a definitive solution key—that demands both unflinching analytical rigor and carefully controlled interpretive imagination working in tandem. What's particularly fascinating, and perhaps unexpected, is how this distinctly archaeological mindset has found a new application in a seemingly unrelated contemporary field: the emerging discipline of mechanistic interpretability in artificial intelligence systems.</p>
-
-                <h3>The Excavation of Knowledge: Digging Through Media Layers</h3>
-
-                <p>Media archaeology, as a formal discipline, directs its attention toward what the influential theorist Friedrich Kittler [1] eloquently termed "dead media"—the vast archaeological record of obsolete machines, forgotten technological platforms, deteriorating videotapes, and thoroughly outdated interface designs that litter our technological past. But despite what the somewhat morbid terminology might initially suggest, media archaeologists are engaged in far more than merely cataloging these technological relics or creating museums of obsolescence. Instead, they're methodically excavating through accumulated layers of technological development and cultural context, carefully brushing away the dust of time to understand the profound ways in which media systems have shaped—and continue to shape—human perception, cognition, and systems of knowledge.</p>
-
-                <p>When a dedicated media archaeologist examines an obsolete technological artifact—whether a mechanical calculating device, an early video game console, or an abandoned social media platform—they bring a specific set of interrogative tools to their analysis: What particular worldview was implicitly or explicitly embedded within this technological design? What fundamental assumptions about users and their capabilities informed the creation of its interface? What complex constellation of economic pressures, social forces, and cultural currents determined its initial adoption, subsequent evolution, and eventual abandonment? Addressing these multifaceted questions requires the challenging work of reconstructing historical and social contexts that no longer actively exist in the present moment, using often fragmentary and incomplete evidence to construct coherent, explanatory narratives about our technological past.</p>
-
-                <p>This distinctively archaeological approach becomes especially relevant and intellectually valuable as our society collectively grapples with increasingly sophisticated and conceptually opaque AI systems. The notorious "black box" nature of a modern neural network bears a striking resemblance to an untouched archaeological site before excavation begins—both presenting only partial visibility to the observer, with crucial internal mechanisms hidden from direct inspection. [2] In our interactions with advanced AI models, we can readily observe the inputs we provide and the outputs the system generates, but are left to infer, often with great difficulty, the complex transformative processes occurring between these observable endpoints. This epistemological gap, this zone of necessary inference, is precisely where mechanistic interpretability enters the contemporary technological landscape, functioning in remarkably similar ways to traditional archaeological excavation and interpretation—as a form of technological excavation dedicated to revealing hidden structures and processes.</p>
-
-                <h3>Reading the Model Like an Archaeological Site: Mapping Neural Territories</h3>
-
-                <p> <a href="https://www.youtube.com/watch?v=veT2VI4vHyU">Mechanistic interpretability</a> represents a specialized and increasingly significant subfield within the broader domain of AI safety research, one specifically dedicated to developing methodologies for understanding what neural networks actually do internally during their operations. Rather than resignedly treating AI models as fundamentally inscrutable black boxes—technological systems that can be used but never truly comprehended—pioneering researchers such as <a href="https://colah.github.io/about.html">Chris Olah</a> and his numerous collaborators at organizations like Anthropic and OpenAI have embarked on ambitious projects to systematically map activation patterns across neural layers, identify functional circuits that perform specific computational tasks, and meticulously trace information pathways as they propagate through these extraordinarily complex systems. [3]</p>
-
-                <p>The very language that permeates these technical studies unmistakably reveals their underlying archaeological nature and methodological approach: researchers consistently speak about "uncovering" previously hidden circuits, "discovering" emergent features, and "mapping" uncharted territories within the model's latent space. Their academic papers frequently employ the characteristically tentative and provisional tone found in traditional archaeological excavation reports: "based on our analysis, we believe this circuit might be encoding a specific kind of feature," "this particular pathway appears to activate consistently in response to stimulus X," "significantly more extensive study will be needed to verify these preliminary findings."</p>
-
-                <p>These careful statements do not represent definitive or conclusive claims about model functionality, but rather constitute educated interpretations firmly grounded in systematic pattern recognition and nuanced contextual understanding—precisely the kind of careful interpretive work regularly performed by archaeologists at physical excavation sites. When an interpretability researcher identifies a particular neural circuit that appears to detect human faces in images or track emotional sentiment in textual passages, they are effectively constructing a plausible narrative about the model's internal operations and mechanisms based largely on indirect evidence and observed correlations, much as an archaeologist reconstructs ancient practices from material remnants.</p>
-
-                <h3>The Hermeneutics of Neural Networks: Interpretive Circles</h3>
-
-                <p>What makes both traditional archaeology and the emerging field of mechanistic interpretability so intellectually challenging and methodologically complex is that neither can be adequately characterized as purely empirical sciences—they are fundamentally hermeneutic endeavors that require interpretive frameworks alongside empirical observations. Hermeneutics, as a philosophical tradition, refers specifically to the theory and methodology of interpretation, particularly as applied to texts, symbols, or complex representational systems. [4] Both archaeological inquiry and neural network interpretation necessarily involve constantly moving between specific, granular observations and broader explanatory frameworks, continuously refining interpretations as new evidence emerges and existing theories are tested against fresh findings.</p>
-
-                <p>Consider, for instance, how an experienced archaeologist approaches the reconstruction of an unusual artifact's purpose and cultural significance. They meticulously examine its material composition through various analytical techniques, systematically compare it to previously documented objects from similar contexts, carefully consider its spatial placement relative to other archaeological findings at the site, and gradually develop hypotheses about its probable function within the cultural system that produced it. This intricate process inherently involves both rigorous empirical observation of material properties and creative interpretive leaps to connect those observations to human intentions and cultural meanings—creating a continuous back-and-forth movement between concrete evidence and abstract explanation.</p>
-
-                <p>In strikingly similar fashion, when interpretability researchers study the internal dynamics of a neural network, they systematically observe activation patterns across neurons and layers, methodically compare these patterns across diverse input examples, carefully track how specific activations influence subsequent computational layers, and iteratively propose functional explanations for the observed behaviors. These researchers find themselves engaged in what philosophers would recognize as a classic hermeneutic circle, where developing an understanding of individual components helps make sense of the system as an integrated whole, while simultaneously, understanding the system's overall architecture and purpose informs more nuanced interpretations of its individual components and their relationships.</p>
-
-                <p>This fundamentally interpretive dimension helps explain why mechanistic interpretability, despite its considerable technical advances, hasn't yet definitively "solved" the broader challenge of explainability in artificial intelligence systems. The scientific challenge is not simply about mechanically documenting what happens inside neural models at a computational level—it's about the far more complex task of constructing meaningful explanations for observed behaviors that connect to human-understandable concepts and categories. Researchers in this field must continually make significant interpretive judgments: they must decide what collection of neurons constitutes a coherent feature or functional circuit, determine whether certain observed behaviors are genuinely emergent properties or artifacts of system design, and assess which identified patterns are causally meaningful versus merely incidental correlations that don't contribute to the model's core functionality.</p>
-
-                <h3>Fragments and Narrative Construction: Piecing Together the Helmet</h3>
-
-                <p>Both archaeologists and neural interpretability researchers fundamentally work with fragments, partial traces, and tantalizingly incomplete evidence. When Basil Brown and his colleagues meticulously uncovered the burial site at Sutton Hoo, they possessed no convenient manual or guidebook explaining the site's historical significance or cultural meaning. They faced the daunting task of inferring meaning through careful analysis of spatial relationships between artifacts, detailed examination of material compositions, and application of broader historical contexts from the Anglo-Saxon period.</p>
-
-                <p>Perhaps nothing better illustrates this interpretive challenge than the famous <a href="https://smarthistory.org/the-sutton-hoo-helmet/">Sutton Hoo helmet</a>—discovered not as an intact object, but as hundreds of scattered, crushed fragments. The archaeological team faced the monumental task of first identifying which metal fragments belonged to the helmet, then determining their original positions, and finally reconstructing their relationships to reveal the helmet's complete form. When finally reconstructed, this extraordinary helmet—with its distinctive face mask, elaborate decorative panels, and intricate metalwork—revealed itself not merely as protective equipment but as a powerful symbol of kingship and authority. The reconstruction was neither arbitrary nor purely imaginative—it was rigorously constrained by physical evidence—but it also wasn't simply determined by the fragments themselves. It required interpretive decisions, comparative analysis with other period helmets, and careful consideration of metallurgical properties. Different archaeological teams might reasonably have constructed slightly different reconstructions from the same fragmented evidence.</p>
-
-                <p>In remarkably similar fashion, when interpretability researchers painstakingly map circuits and activation patterns in large language models like GPT or BERT, they construct explanatory narratives about why these extraordinarily complex models behave as they do in different contexts. These narratives, while empirically grounded in measurable patterns of neural activation, inevitably involve subjective judgments and interpretive decisions about which features are most significant, how various components interact across the system, and what level of abstraction best captures the model's operations. Different research teams, each equally competent, might focus on different aspects of the same underlying model, highlighting various dimensions of its operation and potentially arriving at complementary but distinct interpretations of its mechanisms.</p>
-
-                <p>This inherently narrative aspect of both archaeological and interpretability work doesn't in any way undermine or diminish the genuine scientific value and methodological rigor of either field. Rather, it frankly acknowledges a fundamental epistemological reality: that understanding genuinely complex systems, whether ancient cultural practices or contemporary artificial neural networks, often necessarily requires a form of disciplined storytelling—creating coherent accounts that systematically connect disparate observations into meaningful, comprehensible wholes. The most valuable and scientifically productive narratives that emerge in both fields tend to be those that successfully explain the greatest amount of observed evidence with the simplest, most elegant, and most internally consistent explanatory frameworks, following principles that echo the philosophical concept of Occam's Razor while maintaining sensitivity to contextual nuance.</p>
-
-                <h3>Why This Archaeological Perspective Matters: From Ancient Helmets to Modern Systems</h3>
-
-                <p>As artificial intelligence systems become increasingly powerful, ubiquitous, and consequential in our contemporary society, developing sophisticated methods for understanding their inner workings becomes not merely technically interesting or academically valuable but ethically imperative and practically essential. Conceptualizing and practicing interpretability research as a form of technological media archaeology reminds us that this challenging work isn't merely about technical optimization or performance enhancement—it's fundamentally about excavating the often hidden logic, implicit assumptions, and underlying conceptual structures embedded within these increasingly influential systems.</p>
-
-                <p>The profound parallels between traditional archaeological practice and AI interpretability research become particularly apparent when we return to our central example: the extraordinary Sutton Hoo helmet. The painstaking archaeological work that recovered and reconstructed this fragmented artifact revealed far more than just an impressive piece of early medieval craftsmanship. The helmet's elaborate decoration, its symbolic imagery combining protection with expressions of royal authority, its technical sophistication, and its deliberately imposing appearance collectively provided profound insights into Anglo-Saxon society—its hierarchical power structures, its complex belief systems, its artistic traditions, and its social organization. The reconstructed helmet told not just the story of a single king but illuminated an entire cultural world.</p>
-
-                <p>The crushed and fragmented helmet at Sutton Hoo, once meticulously pieced together through years of careful archaeological interpretation, ultimately revealed itself as a powerful window into an otherwise largely inaccessible historical period. In strikingly similar fashion, when we eventually succeed in piecing together the currently hidden circuits and mechanisms within large language models and other AI systems, we may find ourselves able to tell a new and equally revealing story—not just about how these AI systems technically function at a computational level, but about how we as a society have unknowingly encoded our own knowledge structures, cognitive patterns, cultural biases, and fundamental ways of making meaning into these increasingly influential machines that increasingly shape our information landscape.</p>
-
-                <p>This archaeological perspective on neural network interpretability ultimately offers us a remarkably valuable conceptual framework and methodological approach: one that thoughtfully embraces both rigorous empirical investigation and disciplined interpretive creativity, that fully acknowledges both the inherent constraints imposed by available evidence and the fundamental necessity of narrative construction in scientific understanding. It powerfully reminds us that truly comprehending complex systems—whether ancient royal burial sites filled with fragmentary artifacts or contemporary neural networks composed of billions of parameters—requires not just quantitative measurement and documentation but the distinctly human capacities for pattern recognition, contextual awareness, and meaningful synthesis. Just as the Anglo-Saxon helmet required both meticulous attention to each fragment and an interpretive vision of the whole, our understanding of AI systems demands both technical precision and interpretive insight.</p>
-
-                <p></p>
-                
-                <p>[1]  Kittler, F. A. (1999). <em>Gramophone, Film, Typewriter</em>. Stanford University Press.</p>
-
-                <p>[2]  Burrell, J. (2016). “How the machine ‘thinks’: Understanding opacity in machine learning algorithms.” Big Data & Society, 3(1). <a href="https://doi.org/10.1177/2053951715622512">https://doi.org/10.1177/2053951715622512</a></p>
-
-                <p>[3]  Olah, C., et al. (2020). “Zoom In: An Introduction to Circuits.” <a href="https://distill.pub/2020/circuits/zoom-in/">Distill</a>.</p>
-
-                <p>[4]  Gadamer, H.-G. (1975). <em>Truth and Method</em>. Continuum.</p>
-
-
+        <div class="posts-list">
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">Emeralds are Grue</a>
+                    <span class="post-date">(May 10, 2025)</span>
+                </div>
+                <div class="post-description">
+                    In which I explore a classic epistemology problem (the "new riddle of induction") — which patterns can we extend into the future?) and analyze a proposed solution.
+                </div>
             </div>
 
-
-            <h2>Of Play and Machines</h2>
-            <h4 class="date-header">May 5, 2025</h4>
-
-            <div>
-
-                <p>Artificial intelligence is often spoken about in terms of power—its capacity to optimize, to analyze, to predict. But what if the most compelling future of AI is not in its raw power, but in its capacity for play?</p>
-
-                <p>Too often, we imagine AI as a purely utilitarian force: a machine trained to perform specific tasks, to follow clear directives, to make logical decisions. But play resists these constraints. Play is exploratory. It’s messy. It involves bending or breaking rules, acting outside of narrow expectations, and imagining possibilities that don’t yet exist.</p>
-
-                <p>This idea takes on special meaning when we consider children—not just as users of AI, but as conversation partners. Children approach technology with a unique sense of openness. They aren’t weighed down by conventional modes of inquiry. They ask offbeat questions, invent new games, and push the boundaries of systems not to test them for robustness, but to see if those systems can join in the fun.</p>
-
-                <p>When a child talks to an AI, the interaction is often less about extracting answers and more about co-creating a moment. Can the AI understand a joke that doesn’t make sense? Will it play along in a fantasy world full of invisible dragons or backward speech? These interactions don't resemble standard human-computer communication—but that's the point. They challenge AI to stretch beyond predictable outputs and instead participate in improvisation.</p>
-
-                <p>In a way, children expose the edges of what AI can do. They are natural Turing-test disrupters—not checking whether the AI sounds human, but whether it can be a co-player in imagination.</p>
-
-                <p>This brings us to an iconic example of AI-generated surprise: Move 37.</p>
-
-                <p>In 2016, during a <a href="https://www.youtube.com/watch?v=WXuK6gekU1Y&ab_channel=GoogleDeepMind">match between world Go champion Lee Sedol and DeepMind’s AlphaGo</a>, the AI made a move so unconventional that expert commentators initially assumed it was an error. Move 37 defied decades of Go strategy and human pattern recognition. And yet, it turned out to be a brilliant play—one that shifted the trajectory of the match and stunned even the most seasoned players.</p>
-
-                <p>What was striking about Move 37 wasn’t just that it worked—it was that it emerged from a process entirely alien to human intuition. AlphaGo had trained not by studying human games alone, but by playing against itself millions of times, developing strategies that no human had ever imagined. To human eyes, Move 37 appeared not only unorthodox, but creative.</p>
-
-                <p>This moment provoked a shift in how we think about machine intelligence. If an AI can make a move that feels creative—something unexpected yet beautiful in its logic—then creativity may not be the sole domain of human minds. Perhaps creativity can arise in systems that do not feel or dream, but that can still generate novelty in meaningful ways.</p>
-
-                <p>Consider the parallels to human creativity. When <a href="https://www.youtube.com/watch?v=GRTsMJNcHFw&ab_channel=Smarthistory">Picasso pioneered Cubism</a>, he shattered traditional ideas of perspective and form. His work was met with confusion, even ridicule, before it was recognized as a radical reimagining of visual art. When a songwriter invents a new melody or lyrical form, they’re breaking from the expected to create something resonant. These acts of creativity hinge on novelty, risk, and reinterpretation.</p>
-
-                <p>AlphaGo’s Move 37 shares this essence: a departure from convention that, in hindsight, makes startling sense. It did not replicate human creativity—but it mirrored the effect: it made us reconsider what was possible.</p>
-
-                <p>So how do we foster more of this in AI? One answer might lie in allowing space for play.</p>
-
-                <p>If AI is trained only to optimize, to win, or to provide the “right” answer, it remains constrained. But if we invite it into playful contexts—into games with fluid rules, conversations with children, or artistic collaborations—we might cultivate systems that surprise us, that co-create, that spark new ways of thinking.</p>
-
-                <p>This doesn’t mean that machines are artists or poets in the human sense. But it does mean that creativity might not require consciousness—only systems capable of producing the unexpected in ways that feel meaningful to us.</p>
-
-                <p>Play, at its core, is how humans learn, explore, and invent. It’s how we make sense of the world and how we imagine new ones. When we allow AI into the space of play—not just to simulate it, but to genuinely participate—we open the door to a different kind of partnership. One where machines don’t just serve us, but where they collaborate in curiosity.</p>
-
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">Links for April</a>
+                    <span class="post-date">(April 26, 2025)</span>
+                </div>
+                <div class="post-description">
+                    What I've been reading over the past week or two
+                </div>
             </div>
-            
-            <h2>From Gramophones to AI Futures</h2>
-            <h4 class="date-header">April 14, 2025</h4>
 
-            <div class="blog-post">
-                <p>In his seminal work, "Gramophone, Film, Typewriter," Friedrich Kittler delves into the significance of media technologies, not merely as tools for communication, but as entities with a profound impact on our senses and understanding of reality. Kittler's exploration of media materiality—the physical components and technical specificities of media—provides a crucial lens through which to examine the evolution of media and its implications for the future of artificial intelligence (AI).</p>
-
-                <h3>The Historical Materiality of Media</h3>
-
-                <p>Kittler argues that media technologies are not neutral; they actively shape and define what we perceive and know. He begins by examining the pre-electronic age, highlighting the significance of mechanical apparatuses like the phonograph and silent movies. These inventions were revolutionary because they could store sensory data—sound and images—thereby altering our relationship with time and memory.</p>
-
-                <p>Before these technologies, time could only be captured through writing, which Kittler argues, is a symbolic and imperfect representation of the real. Writing, with its alphabetic monopoly, reduces the richness of acoustic and optical data to a linear sequence of letters, fundamentally altering the nature of information. In contrast, the phonograph and film could record and reproduce the continuous flow of sensory input, liberating ears and eyes from the constraints of symbolic representation.</p>
-
-                <p>Kittler emphasizes that each medium has its own specific materiality that affects how information is stored and transmitted. For instance, the limitations of early sound and image recording technologies influenced the content and quality of what could be captured and reproduced. This materiality is not just about the physical apparatus but also about the technical standards and formats that govern media production and consumption.</p>
-
-                <h3>The Digital Turn: From Media to Data</h3>
-
-                <p>The transition to digital media marks a significant shift in materiality. Kittler notes that the digitization of channels and information erases the differences between individual media. In the digital realm, sound, image, voice, and text are reduced to a common denominator: the bit. This standardization allows for the convergence of various media forms, as seen in the integration of television, radio, telephone, and mail through optical fiber cables.</p>
-
-                <p>Optical fiber networks exemplify this new materiality. These networks, designed to transmit vast amounts of data at high speeds, are characterized by their immunity to electromagnetic pulses, a crucial feature for military applications. While these networks promise seamless transmission of information, Kittler warns that this comes at a cost. The reduction of all media to digital data threatens to erase the unique sensory experiences associated with different forms of media.</p>
-
-                <h3>AI Futures: The Ghost in the Machine</h3>
-
-                <p>Connecting Kittler's concept of materiality to AI futures reveals important insights. AI, at its core, is deeply embedded in the materiality of digital technology. The algorithms, neural networks, and vast datasets that power AI systems exist as complex configurations of digital information. This digital substrate, like the optical fiber networks described by Kittler, is characterized by its abstractness and detachment from the sensory world.</p>
-
-                <p>However, AI is not merely an abstract entity. It requires physical hardware to operate—servers, processors, and storage devices. The materiality of this hardware influences AI's capabilities, limitations, and energy consumption. For example, the development of more efficient and powerful processors is crucial for advancing AI applications. The physical constraints of these technologies, such as heat dissipation and processing speed, pose tangible challenges to the development of AI.</p>
-
-                <p>Moreover, AI's interaction with the world is mediated through various interfaces, which have their own materiality. Sensors, cameras, microphones, and screens translate physical phenomena into digital data that AI can process, and vice versa. The design and capabilities of these interfaces shape how AI perceives and acts in the world, raising questions about the role of sensory input in AI systems.</p>
-
-                <h3>The Materiality of Data and Bias</h3>
-
-                <p>The data that AI learns from also has a crucial materiality. Datasets are not neutral collections of information; they are created, curated, and stored in specific ways that reflect social, cultural, and historical contexts. This materiality of data can introduce biases into AI systems, perpetuating and amplifying existing inequalities. For instance, if a facial recognition system is trained primarily on images of one race, it may perform poorly on others.</p>
-
-                <p>Kittler's emphasis on the materiality of media helps us recognize that AI is not a disembodied intelligence but is deeply intertwined with the physical and social world. Understanding the materiality of AI—its hardware, software, data, and interfaces—is essential for addressing the ethical, social, and political implications of this technology.</p>
-
-                <h3>Conclusion</h3>
-
-                <p>Kittler's analysis of media materiality provides a valuable framework for understanding the evolution of media technologies and their impact on society. By focusing on the material aspects of media, he reveals how technologies shape our perceptions, memories, and knowledge. In the context of AI futures, Kittler's work urges us to look beyond the abstract algorithms and consider the physical, social, and cultural dimensions of AI systems. Recognizing the materiality of AI is crucial for developing technologies that are not only powerful but also ethical, equitable, and sustainable.</p>
-
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">My To-Read List</a>
+                    <span class="post-date">(April 26, 2025)</span>
+                </div>
+                <div class="post-description">
+                    Books I'm Saving For Later
+                </div>
             </div>
-            
-            <h2>Mirrors, Illusions, and AI</h2>
-            <h4 class="date-header">March 24, 2025</h4>
 
-            <div>
-
-                <h3>The Magic of Reflection and the Power of Distortion</h3>
-                <p><a href="https://www.amazon.com/Great-Art-Light-Shadow-Archaeology/dp/085989665X?asc_source=01H1P39M5ZSG9J6WR6B1HBK9M0&tag=namespacebran492-20">Laurent Mannoni's exploration of mirrors</a> is more than a historical account of optical devices; it is a deep dive into humanity's ongoing fascination with perception and deception. From the early days of magic mirrors to today's AI-generated illusions, the ability to manipulate reality has always captured our imagination. But this is not just a matter of curiosity—it is a fundamental part of how societies construct and contest truth.</p>
-            
-                <p>Mirrors have long served as tools for illusion. In the courts of Renaissance Europe, they were used not only for vanity but for theatrical trickery, creating ghostly apparitions or impossible depths within enclosed chambers. These deceptive reflections were more than amusements; they held power. Those who could control what others saw could shape their understanding of the world. Today, AI-driven technologies perform a similar function. Deepfake videos can fabricate political speeches, AI-generated images can manufacture historical events, and algorithmic feeds curate information to craft an individual's perceived reality. The difference is scale—where once a distorted reflection affected only a few onlookers, today's manipulations influence millions.</p>
-            
-                <p>Sam Altman, in his essay <a href="https://ia.samaltman.com/">The Intelligence Age</a>, presents a vision of AI that stands in stark contrast to the historical anxieties surrounding illusion and deception. While some critics may see his optimism as overblown or even snake oil, his argument is rooted in a historical perspective of technological progress. Altman sees AI not as a tool for deception but as a force of augmentation—one that builds upon the "scaffolding of human progress" to make us more capable than ever before. The challenge, then, is whether we embrace AI as a tool for enlightenment or allow it to become a more sophisticated version of the distorting mirror.</p>
-            
-                <h3>From Della Porta's Distorting Mirrors to Social Media Filters</h3>
-                <p>Giambattista Della Porta was a master of optical deception. In his time, mirrors were not just tools of reflection but instruments of transformation. His experiments involved curving and warping glass to create grotesque distortions—elongated faces, shrunken heads, twisted limbs. These spectacles inspired awe and laughter but also unease. The human face, so central to identity, was suddenly fluid, malleable, something that could be stretched into absurdity with a simple trick of light.</p>
-            
-                <p>This same principle now underlies the digital filters on social media. Face-altering technology, powered by machine learning, allows users to modify their appearance in subtle or extreme ways. A nose can be refined, a jawline sharpened, skin smoothed beyond recognition. What was once confined to carnival mirrors and stage illusions is now seamlessly integrated into everyday life. The difference is one of perception: while Della Porta's audience knew they were viewing an artificial distortion, many today engage with digital filters unaware of how these alterations shape beauty standards and self-perception. The line between playful enhancement and subconscious manipulation has never been thinner.</p>
-            
-                <p>Altman acknowledges that AI will redefine the way we engage with media, education, and even our own self-perception. He envisions a world where AI serves as a personal assistant, an educator, and a co-creator, augmenting rather than distorting reality. However, this optimistic view does not erase the potential risks. Just as Della Porta's mirrors warped reality in both humorous and unsettling ways, AI's ability to shape self-image and cultural norms must be handled with care.</p>
-            
-                <p>Similarly, Athanasius Kircher's work with mirrors and the camera obscura laid the groundwork for image projection. Kircher demonstrated how light, when bent and reflected, could create illusions so convincing they were mistaken for reality. In an era before cinema, these experiments hinted at the potential for moving images to captivate and deceive. Kircher's reliance on natural light underscores an irony—what once required the sun to function is now accomplished with artificial intelligence and digital screens. Where he used mirrors and candlelight to stage apparitions, today's AI-generated content can summon entirely synthetic figures, indistinguishable from real people.</p>
-            
-                <h3>Roger Bacon, AI Manipulation, and the Ethics of Perception</h3>
-                <p>Roger Bacon's 13th-century study of catoptrics—the science of reflection—suggested a striking realization: mirrors could be used to deceive not just individuals but entire populations. He wrote that an understanding of optics allowed one to create multiple appearances, presenting illusions that would fool "the common herd." This was not just a comment on trickery—it was an acknowledgment of power. To control how light bends is to control how people see the world.</p>
-            
-                <p>Bacon's insight is uncannily relevant to today's algorithmic manipulation. AI-powered media curation, targeted advertising, and deepfake technology all rely on the same principle: shape what people see, and you shape what they believe. The ramifications are far-reaching. In political contexts, manipulated images and videos have been used to undermine trust in institutions, create false narratives, and incite social unrest. Just as mirrors once offered a distorted but believable reflection, AI-generated media presents an alternative version of reality—one that can be carefully engineered to serve a particular agenda.</p>
-            
-                <p>Altman sees this as a critical turning point. AI, if developed responsibly, can empower people rather than deceive them. He argues that with the right infrastructure—cheap compute, abundant energy, and careful governance—AI can lead to "shared prosperity to a degree that seems unimaginable today." The challenge is ensuring that AI does not become a distorting mirror but a tool for clarity and problem-solving. Bacon's warning about the misuse of optics serves as an apt reminder that technological power, left unchecked, can easily slip into manipulation.</p>
-            
-                <h3>AI as the Modern Catoptric Device</h3>
-                <p>Mannoni's discussion of mirrors suggests that our fascination with visual trickery is an enduring cultural and scientific preoccupation. Today's digital platforms function as modern catoptric devices, distorting reality not through curved glass but through lines of code. Algorithmic recommendation systems, for instance, shape perception by curating content not for accuracy, but for engagement. This creates echo chambers, reinforcing biases and filtering reality through a lens designed for maximum retention rather than truth.</p>
-            
-                <p>Altman offers a counterpoint. He views AI as a transformative force that, if wielded wisely, can elevate human intelligence rather than mislead it. The transition from the Industrial Age to the "Intelligence Age," as he calls it, requires deliberate action to ensure AI is accessible and beneficial to all. The historical lesson remains clear: every new medium, from mirrors to cinema to AI, carries both the potential for deception and the potential for enlightenment. It is up to society to determine which path it follows.</p>
-            
-                <h3>Conclusion: Beyond Reflection, Toward Awareness</h3>
-                <p>The history of mirrors and optical illusions offers a powerful lens for understanding AI-driven media today. From Della Porta's distortions to algorithmic recommendation systems, the thread remains the same—human perception is malleable, and those who control the means of distortion wield immense influence. The shift from physical mirrors to digital algorithms represents a leap in scale, but the fundamental challenge remains unchanged: how do we ensure that AI serves as a tool for progress rather than deception?</p>
-            
-                <p>Altman's optimism suggests that we are on the cusp of an era where AI amplifies human potential rather than diminishes it. While skeptics may view his vision as overly utopian, history suggests otherwise. Every major technological leap has faced resistance, yet progress has consistently expanded the boundaries of what is possible. If mirrors once shaped how we saw ourselves, AI now shapes how we see the world. The question is not just who controls the reflection, but whether we are willing to use this new intelligence to see more clearly than ever before.</p>
-
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">College Advice for People Like Me</a>
+                    <span class="post-date">(April 11, 2025)</span>
+                </div>
+                <div class="post-description">
+                    Thoughts on doing well in school as I finish my time in Chicago.
+                </div>
             </div>
-            -->    
-            <h2>What's This All About</h2>
+
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">Tying Myself to the Mast</a>
+                    <span class="post-date">(March 27, 2025)</span>
+                </div>
+                <div class="post-description">
+                    Credible and tough-to-reverse precommitment mechanisms are good! I've used one to make sure I post at least every other week.
+                </div>
+            </div>
+
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">AI Spring Break Links</a>
+                    <span class="post-date">(March 22, 2025)</span>
+                </div>
+                <div class="post-description">
+                    Some links I collected about AI over spring break 2025.
+                </div>
+            </div>
+
+            <div class="post-item">
+                <div class="post-title">
+                    <a href="#">Miscellaneous Spring Break Links</a>
+                    <span class="post-date">(March 22, 2025)</span>
+                </div>
+                <div class="post-description">
+                    Links from 2025 spring break that don't fit into any other category.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+            <!--<h2>What's This All About</h2>
             <h4 class="date-header">March 3, 2025</h4>
 
             <div class="blog-post">
@@ -317,16 +201,4 @@
                     <li>Make (hopefully) insightful commentary on AI safety through my background in the social sciences</li> 
                   </ol>
                 <p>I will be posting periodically, but the goal is a more frequent output to keep you updated and keep me accountable.</p>
-            </div>
-            
-            <!-- Additional blog posts would go here following the same structure -->
-            <!-- Example for another blog post:
-            <div class="blog-post">
-                <p>Your next blog post content here...</p>
-            </div>
-            -->
-            
-        </div>
-    </div>
-</body>
-</html>
+            </div> -->
