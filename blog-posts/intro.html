@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PT Serif', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .navigation {
+            text-align: left;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .post-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .post-title {
+            font-size: 48px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .post-author {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-variant: small-caps;
+        }
+
+        .post-date {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .post-content {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .post-content a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .post-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Footnote styling */
+        .footnote-ref {
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 12px;
+            vertical-align: super;
+            line-height: 0;
+        }
+
+        .footnote-ref:hover {
+            text-decoration: underline;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .footnote {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .footnote-number {
+            color: #0366d6;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .footnote a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .footnote a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .post-title {
+                font-size: 36px;
+            }
+            
+            .back-link {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="#blog" class="back-link">← Blog</a>
+        </nav>
+
+        <div class="post-header">
+            <h1 class="post-title">Emeralds are Grue</h1>
+            <div class="post-author">Henry Josephson</div>
+            <div class="post-date">May 10, 2025</div>
+        </div>
+
+        <div class="post-content">
+            <p>Though it'll be included in my March links roundup,<a href="#footnote-1" class="footnote-ref">1</a> the <em>Daily Princetonian</em>, in addition to the second-greatest collegiate crossword puzzle section in the nation (the <em>Maroon</em> is #1), also had a great <a href="#">piece</a> on SecDef Pete Hegseth's apparent plagiarism in his senior thesis.</p>
+
+            <p>On the one hand, I love student journalism,<a href="#footnote-2" class="footnote-ref">2</a> and Hegseth seems, pretty clearly, to have plagiarised. On the other, honestly? With the sheer number of public figures that appear to have plagiarized, maybe the correct conclusion is that <a href="#">plagiarism isn't as bad as we thought</a>? I'm very unsure, but, regardless, it doesn't look great for Pete.</p>
+
+            <p>I've also spent the past ~week thinking (and writing!) about:</p>
+
+            <ul>
+                <li>Whether I should <a href="#">donate a kidney</a>,</li>
+                <li>What must I do to ensure that, when I move to a totally new city in a few months, I can <a href="#">build a community</a>,</li>
+                <li>What good governance structures look like in worlds where AGI capabilities are available to everyone (thanks, DeepMind internship!),</li>
+                <li>How we can get across the finish line light-touch AI governance that acknowledges our uncertainties and intelligently walks the tightrope between innovation and recklessness, and</li>
+                <li>what the hell "commitment" means.</li>
+            </ul>
+        </div>
+
+        <div class="footnotes">
+            <div class="footnote" id="footnote-1">
+                <span class="footnote-number">1</span>
+                When it goes out, I'll link to it here.
+            </div>
+            <div class="footnote" id="footnote-2">
+                <span class="footnote-number">2</span>
+                Only haters and losers will denigrate my time as head (crossword) editor for the <em>Chicago Maroon</em>.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
