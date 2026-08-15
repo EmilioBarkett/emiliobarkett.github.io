@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,26 +115,17 @@
         <h1 class="page-title">Blog</h1>
         
         <div class="posts-list">
+            {% for post in site.posts %}
             <div class="post-item">
                 <div class="post-title">
-                    <a href="/blog-posts/a-new-chapter.html">A New Chapter</a>
-                    <span class="post-date">(July 25, 2025)</span>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <span class="post-date">({{ post.date | date: "%B %-d, %Y" }})</span>
                 </div>
                 <div class="post-description">
-                    Reflecting on the journey so far and the path ahead.
+                    {{ post.description }}
                 </div>
             </div>
-
-        <div class="posts-list">
-            <div class="post-item">
-                <div class="post-title">
-                    <a href="/blog-posts/whats-this-all-about.html">What's This All About</a>
-                    <span class="post-date">(March 3, 2025)</span>
-                </div>
-                <div class="post-description">
-                    A small note about the direction of this blog.
-                </div>
-            </div>
+            {% endfor %}
 
         <!--    <div class="post-item">
                 <div class="post-title">

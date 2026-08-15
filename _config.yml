@@ -1,0 +1,14 @@
+title: Emilio Barkett
+author: Emilio Barkett
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  footnote_nr: 1
+
+permalink: /blog-posts/:year/:month/:title.html
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

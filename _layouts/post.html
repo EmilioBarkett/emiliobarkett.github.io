@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A New Chapter</title> <!-- ***************************** Make sure to change this ***************************** -->
+    <title>{{ page.title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <style>
         * {
@@ -85,7 +85,8 @@
             text-decoration: underline;
         }
 
-        .post-content ul {
+        .post-content ul,
+        .post-content ol {
             margin-bottom: 20px;
             padding-left: 20px;
         }
@@ -94,16 +95,18 @@
             margin-bottom: 10px;
         }
 
-        /* Footnote styling */
-        .footnote-ref {
-            color: #0366d6;
-            text-decoration: none;
+        /* Footnote styling (kramdown output) */
+        .post-content sup {
             font-size: 12px;
-            vertical-align: super;
             line-height: 0;
         }
 
-        .footnote-ref:hover {
+        .post-content sup a.footnote {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .post-content sup a.footnote:hover {
             text-decoration: underline;
         }
 
@@ -113,26 +116,45 @@
             border-top: 1px solid #ccc;
         }
 
-        .footnote {
+        .footnotes ol {
+            padding-left: 20px;
+        }
+
+        .footnotes li {
             font-size: 14px;
             color: #666;
             margin-bottom: 10px;
             line-height: 1.5;
         }
 
-        .footnote-number {
-            color: #0366d6;
-            font-weight: bold;
-            margin-right: 5px;
+        .footnotes li p {
+            display: inline;
+            margin-bottom: 0;
         }
 
-        .footnote a {
+        .footnotes a {
             color: #0366d6;
             text-decoration: none;
         }
 
-        .footnote a:hover {
+        .footnotes a:hover {
             text-decoration: underline;
+        }
+
+        .footnotes a.reversefootnote {
+            margin-left: 4px;
+        }
+
+        .references {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .references ul {
+            padding-left: 20px;
         }
 
         /* Responsive design */
@@ -140,11 +162,11 @@
             .container {
                 padding: 20px 15px;
             }
-            
+
             .post-title {
                 font-size: 36px;
             }
-            
+
             .back-link {
                 font-size: 14px;
             }
@@ -158,34 +180,13 @@
         </nav>
 
         <div class="post-header">
-            <h3 class="post-title">A New Chapter</h3> <!-- ***************************** Make sure to change this ***************************** -->
-            <div class="post-author">Emilio Barkett</div>
-            <div class="post-date">July 25, 2025</div> <!-- ***************************** Make sure to change this ***************************** -->
+            <h3 class="post-title">{{ page.title }}</h3>
+            <div class="post-author">{{ page.author | default: site.author }}</div>
+            <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
         </div>
-        <!-- ***************************** Make sure to change this. Down below is the blog's content. ***************************** -->
+
         <div class="post-content">
-            <p>At the start of the year, <a href="https://emiliobarkett.github.io/blog-posts/whats-this-all-about.html" target="_blank" rel="noopener noreferrer">I said</a> I'd use this site to blog. Not just to post&mdash;but to document, reflect, and share.</p>
-            <p>The goal was three-fold:</p>
-                <ul>
-                    <li>Capture my research in motion</li>
-                    <li>Share what I'm thinking about</li>
-                    <li>Offer commentary on AI safety through a social science lens</li>
-                </ul>
-
-            <p>I never set a schedule. That was a mistake.</p>
-
-            <p>Starting now, I'm writing every other Friday. Call it a rhythm. Call it a practice. But it's happening.</p>
-
-            <p>Why now and not the past four months?</p>
-
-            <p>Because the next five months matter.</p>
-
-            <p>This is my final semester at Columbia University as a master's student. I'm writing a thesis, working on research I care about, and applying to PhD programs across the country. It's a sprint and a story worth telling.</p>
-
-            <p>Inspired by Henry Josephson, I'm <a href="https://www.henryjosephson.com/writing/Tying-Myself-to-the-Mast/" target="_blank" rel="noopener noreferrer">tying myself to the mast</a>. Not to survive the storm that is ahead, but to stay grounded in the moment. To write. To think clearly. To turn experience into insight.</p>
-
-            <p>Let's see where it goes.</p>       
-            
+            {{ content }}
         </div>
     </div>
 </body>

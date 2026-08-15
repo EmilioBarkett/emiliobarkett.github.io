@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Guarding Against the Normalization of Deviance"
+date: 2026-08-14
+description: "What Challenger's O-rings teach about how organizations, and people, quietly redefine risk as normal."
+---
+
+On the morning of January 28, 1986, Space Shuttle Challenger broke apart 73 seconds after liftoff, killing all seven crew members aboard. The proximate cause was simple: a rubber O-ring seal in the right solid rocket booster failed in unusually cold weather, letting hot gas escape and ignite the external fuel tank. What's less widely known is that engineers at Morton Thiokol, the company that built the boosters, spent the night before launch arguing against flying at all. They knew the O-rings behaved badly in the cold. NASA managers listened, pushed back, and gave the go-ahead anyway.
+
+The easy version of this story casts NASA managers as villains who buried a warning to protect a launch schedule. The sociologist Diane Vaughan spent nine years going through NASA's internal documents and found something quieter and more unsettling: there was no single moment where anyone consciously chose schedule over safety. On earlier flights, the O-rings had shown small, unplanned erosion. Each time, nothing catastrophic followed, so that erosion was reclassified as an "acceptable risk" rather than treated as the warning it was. Vaughan called this pattern the normalization of deviance — the gradual process by which a signal that should trigger alarm instead becomes, flight after flight, just how things are.[^1]
+
+What makes this dangerous is that it doesn't feel like recklessness from the inside. Nobody wakes up and decides to lower their standards. Each individual step looks reasonable: the last flight worked, the data is ambiguous, the deadline is real, and the people asking for a delay are, once again, the cautious engineers who are always a little cautious. The line that used to mark "unacceptable" quietly moves, one flight at a time, until an organization is operating well outside its own original safety margins without anyone ever having agreed to that.
+
+You don't need a space program to see this pattern. Hospitals have documented it in hand hygiene: guidelines call for washing or sanitizing before and after every patient contact, but staff under time pressure start skipping the step when nothing seems to go wrong. Each skipped wash that doesn't cause a visible infection quietly confirms that skipping is fine, even as the infection rate creeps up across the hospital. The same mechanism shows up in "alarm fatigue" — nurses surrounded by monitors that cry wolf dozens of times a day learn, reasonably, to tune them out, which works fine until the one alarm that mattered gets tuned out too.[^2]
+
+It happens in ordinary life too, at a much smaller scale. Think about checking your phone at a red light. The first time, nothing happens, so it stops feeling risky. Eventually the checking creeps from red lights to rolling stops to open road, because every prior instance without a crash felt like proof the behavior was fine, rather than a warning that you'd simply been lucky. The same logic explains why people stop backing up their laptops, skip a seatbelt for "just down the street," or keep smoking past the first cough. Nothing about the underlying risk changed; only how used to it we got.
+
+Guarding against this doesn't require paranoia — it requires structure. Treat a near-miss as data, not as permission: the fact that a risk didn't materialize this time is not evidence that it was safe, only that you got away with it. Build in a check that doesn't depend on your own judgment in the moment, like a checklist, a second reviewer, or a rule you follow even when it feels unnecessary. And protect the person in the room who says "I'm not comfortable with this," because that voice is doing the job that a handful of Morton Thiokol engineers tried, and failed, to do the night before Challenger flew.
+
+[^1]: Diane Vaughan, *The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA* (University of Chicago Press, 1996).
+[^2]: Alarm fatigue is well documented in clinical settings; The Joint Commission issued a National Patient Safety Goal on the topic after tracking hundreds of alarm-related adverse events.
