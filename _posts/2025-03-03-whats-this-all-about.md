@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What's This All About"
+title: "What's this all about"
 date: 2025-03-03
 description: "A small note about the direction of this blog."
 ---

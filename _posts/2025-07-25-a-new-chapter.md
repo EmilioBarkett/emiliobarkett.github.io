@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A New Chapter"
+title: "A new chapter"
 date: 2025-07-25
 description: "Reflecting on the journey so far and the path ahead."
 ---
