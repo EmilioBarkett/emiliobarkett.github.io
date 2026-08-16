@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Putting on your own mask first"
+title: "Putting your mask on first"
 date: 2026-08-15
 description: "Real service to others has to start with extending the same love and compassion to yourself."
 ---
