@@ -1,5 +1,6 @@
 title: Emilio Barkett
 author: Emilio Barkett
+url: "https://emiliobarkett.github.io"
 
 markdown: kramdown
 kramdown:
@@ -7,6 +8,9 @@ kramdown:
   footnote_nr: 1
 
 permalink: /blog-posts/:year/:month/:title.html
+
+plugins:
+  - jekyll-feed
 
 exclude:
   - Gemfile
