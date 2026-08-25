@@ -5,7 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title | default: site.title }}</title>
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <style>
+        :root {
+            --bg: #fff;
+            --text: #222;
+            --text-strong: #111;
+            --muted: #666;
+            --link: #0366d6;
+            --border: #ddd;
+            --note-bg: #f8f9fa;
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #16181d;
+            --text: #dcdcdc;
+            --text-strong: #f2f2f2;
+            --muted: #999;
+            --link: #6ea8fe;
+            --border: #333;
+            --note-bg: #1e2228;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -15,14 +42,14 @@
             max-width: 700px;
             margin: 0 auto;
             padding: 60px 20px 80px;
-            color: #222;
+            color: var(--text);
             line-height: 1.6;
             font-size: 15px;
-            background-color: #fff;
+            background-color: var(--bg);
         }
 
         a {
-            color: #0366d6;
+            color: var(--link);
             text-decoration: none;
         }
 
@@ -35,6 +62,12 @@
             margin-bottom: 40px;
         }
 
+        .site-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .site-name {
             font-size: 1.6em;
             font-weight: bold;
@@ -42,11 +75,33 @@
         }
 
         .site-name a {
-            color: #111;
+            color: var(--text-strong);
         }
 
         .site-name a:hover {
             text-decoration: none;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-bottom: 12px;
+            color: var(--link);
+            cursor: pointer;
+            line-height: 0;
+        }
+
+        .theme-toggle .icon-sun {
+            display: none;
+        }
+
+        :root[data-theme="dark"] .theme-toggle .icon-moon {
+            display: none;
+        }
+
+        :root[data-theme="dark"] .theme-toggle .icon-sun {
+            display: inline;
         }
 
         .site-nav a {
@@ -119,13 +174,13 @@
 
         .note {
             font-size: 0.9em;
-            color: #555;
+            color: var(--muted);
         }
 
         /* Teaching / syllabus page */
         .course-info {
             font-size: 1.02em;
-            color: #555;
+            color: var(--muted);
             margin-top: 6px;
             margin-bottom: 30px;
         }
@@ -138,7 +193,7 @@
         .week-title {
             font-size: 1.05em;
             font-weight: bold;
-            color: #1a1a1a;
+            color: var(--text-strong);
             margin-bottom: 12px;
         }
 
@@ -147,9 +202,9 @@
         }
 
         .prereq-note {
-            background-color: #f8f9fa;
+            background-color: var(--note-bg);
             padding: 15px 20px;
-            border-left: 4px solid #0366d6;
+            border-left: 4px solid var(--link);
             margin: 25px 0;
         }
 
@@ -169,7 +224,7 @@
         }
 
         .post-date {
-            color: #666;
+            color: var(--muted);
             font-style: italic;
             font-size: 14px;
             white-space: nowrap;
@@ -202,7 +257,7 @@
         }
 
         .entry-date {
-            color: #666;
+            color: var(--muted);
             font-size: 14px;
         }
 
@@ -212,13 +267,13 @@
         }
 
         .post-content sup a.footnote {
-            color: #0366d6;
+            color: var(--link);
         }
 
         .footnotes {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid var(--border);
         }
 
         .footnotes ol {
@@ -227,7 +282,7 @@
 
         .footnotes li {
             font-size: 13px;
-            color: #666;
+            color: var(--muted);
             margin-bottom: 10px;
         }
 
@@ -243,9 +298,9 @@
         .references {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid var(--border);
             font-size: 13px;
-            color: #666;
+            color: var(--muted);
         }
 
         .references ul {
