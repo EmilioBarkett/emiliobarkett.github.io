@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+            color: #222;
+            line-height: 1.6;
+            font-size: 15px;
+            background-color: #fff;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header / nav, shared across every page */
+        .site-header {
+            margin-bottom: 40px;
+        }
+
+        .site-name {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin: 0 0 12px 0;
+        }
+
+        .site-name a {
+            color: #111;
+        }
+
+        .site-name a:hover {
+            text-decoration: none;
+        }
+
+        .site-nav a {
+            margin-right: 14px;
+            font-size: 14px;
+        }
+
+        .site-nav a:last-child {
+            margin-right: 0;
+        }
+
+        h2 {
+            font-size: 1.25em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.05em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Homepage */
+        .intro {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .intro .profile-img {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            margin-right: 24px;
+        }
+
+        img.profile-img {
+            width: 300px;
+            border-radius: 4px;
+        }
+
+        /* Not enough room in the left margin for the photo on narrower windows */
+        @media (max-width: 1400px) {
+            .intro .profile-img {
+                position: static;
+                margin: 0 0 20px 0;
+            }
+        }
+
+        .publication-title {
+            font-style: italic;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Teaching / syllabus page */
+        .course-info {
+            font-size: 1.02em;
+            color: #555;
+            margin-top: 6px;
+            margin-bottom: 30px;
+        }
+
+        .week-section {
+            margin-top: 35px;
+            padding-top: 15px;
+        }
+
+        .week-title {
+            font-size: 1.05em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .reading-list li {
+            margin-bottom: 10px;
+        }
+
+        .prereq-note {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-left: 4px solid #0366d6;
+            margin: 25px 0;
+        }
+
+        /* Blog index */
+        .page-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .posts-list {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 24px;
+            row-gap: 12px;
+            align-items: baseline;
+        }
+
+        .post-date {
+            color: #666;
+            font-style: italic;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .post-title a {
+            font-size: 15px;
+        }
+
+        @media (max-width: 500px) {
+            .posts-list {
+                grid-template-columns: 1fr;
+                row-gap: 4px;
+            }
+
+            .post-date {
+                margin-top: 10px;
+            }
+        }
+
+        /* Individual post page */
+        .entry-header {
+            margin-bottom: 35px;
+        }
+
+        .entry-title {
+            font-size: 1.7em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .entry-date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .post-content sup {
+            font-size: 12px;
+            line-height: 0;
+        }
+
+        .post-content sup a.footnote {
+            color: #0366d6;
+        }
+
+        .footnotes {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footnotes ol {
+            padding-left: 20px;
+        }
+
+        .footnotes li {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .footnotes li p {
+            display: inline;
+            margin-bottom: 0;
+        }
+
+        .footnotes a.reversefootnote {
+            margin-left: 4px;
+        }
+
+        .references {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .references ul {
+            padding-left: 20px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 16px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include header.html %}
+    <main>
+        {{ content }}
+    </main>
+</body>
+</html>
