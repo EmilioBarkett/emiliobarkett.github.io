@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deserves got nothing to do with it
-date: 2026-01-01
+date: 2026-08-28
 description: 
 ---
 
