@@ -1,0 +1,70 @@
+name: Sync CV from Overleaf
+
+# Compiles cv.tex from the Emilio-Barkett-CV repo (kept in sync by Overleaf)
+# and, when the rendered content changes, commits the new PDF to this repo so
+# GitHub Pages redeploys it.
+#
+# Triggers:
+#   - repository_dispatch (cv-updated): fired by the CV repo on every push
+#   - workflow_dispatch: manual "Run workflow" button
+#   - schedule: daily safety net in case a dispatch is missed
+
+on:
+  repository_dispatch:
+    types: [cv-updated]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-cv
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Checkout CV source
+        uses: actions/checkout@v4
+        with:
+          repository: EmilioBarkett/Emilio-Barkett-CV
+          path: cv-src
+
+      - name: Compile CV
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv-src
+          root_file: cv.tex
+
+      - name: Publish PDF if content changed
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+
+          changed=1
+          if [ -f Emilio-Barkett-CV.pdf ]; then
+            pdftotext -q Emilio-Barkett-CV.pdf current.txt || true
+            pdftotext -q cv-src/cv.pdf incoming.txt || true
+            if cmp -s current.txt incoming.txt; then
+              changed=0
+            fi
+          fi
+
+          if [ "$changed" -eq 0 ]; then
+            echo "CV content unchanged - nothing to publish."
+            exit 0
+          fi
+
+          cp cv-src/cv.pdf Emilio-Barkett-CV.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Emilio-Barkett-CV.pdf
+          git commit -m "Auto-sync CV from Overleaf source"
+          git push
