@@ -30,4 +30,4 @@ None of this closes the question about whether AI systems have emotions. I think
 
 [^1]: Pg. 6.
 
-[^2]: This is a similar and more recent sentiment expressed by Neel Nada when commenting on the OAI-HuggingFace incident. See https://x.com/NeelNanda5/status/2095669416130379865?s=20.
+[^2]: This is a similar and more recent sentiment expressed by Neel Nada when commenting on the OAI-HuggingFace incident. See [here](https://x.com/NeelNanda5/status/2095669416130379865?s=20).
