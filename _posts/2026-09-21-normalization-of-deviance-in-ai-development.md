@@ -95,4 +95,4 @@ Third, we treat governments competing over AI as organizations under production 
 
 The disasters the paper examines were catastrophic, but also legible, in that investigators could establish what had occurred and institutions were reformed on the basis of their findings. A sufficiently large AI failure may permit neither. Nor will the problem be isolated to the frontier labs, as outside models (open-source ones included) are widely expected to match the capabilities involved in the Hugging Face incident before long. Their developers will have the capability without the labs' safety apparatus, and be held to – at most – whatever standard the labs have by then normalized.
 
-The paper is [here](https://arxiv.org/abs/2609.05749). We welcome all feedback.
+The paper is [here](https://arxiv.org/abs/2609.05749). We welcome all feedback. 
