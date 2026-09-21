@@ -5,6 +5,9 @@ layout: default
     <div class="entry-header">
         <h2 class="entry-title">{{ page.title }}</h2>
         <div class="entry-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+        {% if page.authors %}
+        <div class="entry-authors">By {{ page.authors | array_to_sentence_string }}</div>
+        {% endif %}
     </div>
 
     <div class="post-content">
