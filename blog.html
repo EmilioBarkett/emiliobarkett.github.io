@@ -6,8 +6,10 @@ title: Blog
 
 <div class="posts-list">
     {% for post in site.posts %}
+    {% unless post.unlisted %}
     <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
     <div class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></div>
+    {% endunless %}
     {% endfor %}
 </div>
 

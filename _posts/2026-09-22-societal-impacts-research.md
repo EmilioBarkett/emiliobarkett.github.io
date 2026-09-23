@@ -2,6 +2,7 @@
 layout: post
 title: The case for societal impacts research in the AI safety ecosystem
 date: 2026-09-22
+unlisted: true
 description: One sentence for the blog index preview.
 ---
 
