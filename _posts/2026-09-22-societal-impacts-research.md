@@ -66,13 +66,9 @@ I believe that the AI safety ecosystem would benefit from tapping into the socia
 
 At present, social scientists do not have a consistently legible path into the AI safety ecosystem (AIS), except for two weak alternatives:
 
-### 
-
 ### Graduate School
 
 For an undergraduate from the social sciences, graduate school offers a natural path to pursue. For our purposes, I focus on PhD programs and have identified two sub-paths:[^4]
-
-### 
 
 #### PhD in the Social Sciences
 
@@ -81,8 +77,6 @@ Pursuing a PhD in the social sciences has a limited number of advisors broadly i
 #### PhD Outside the Social Sciences
 
 Pursuing a PhD outside the social sciences and in a technical domain, usually limits options to CS departments. This path greatly increases the number of advisors who are interested in AI and AIS. However, a social scientist may experience discomfort due to their lack of technical depth or be viewed as the “expert social scientist” in the department, when they have yet to develop these skills.[^8] Of the two sub-paths within graduate school, this is probably the better choice, given the exposure to AI through a CS department and the upward mobility available as being the “rare” social scientist.
-
-### 
 
 ### Fellowships
 
@@ -245,8 +239,6 @@ AI-enabled persuasion and manipulation (erosion of epistemic autonomy), miscalib
 * Lucius Caviola, University of Oxford (Leverhulme Centre for the Future of Intelligence), [luciuscaviola.com](https://luciuscaviola.com/)  
 * Matthew Salganik, Princeton University, [sociology.princeton.edu/people/matthew-j-salganik](http://sociology.princeton.edu/people/matthew-j-salganik)  
 * Sandra Matz, Columbia Business School, [https://sandramatz.com/](https://sandramatz.com/) 
-
-### 
 
 ## Illustrative Research Questions {#illustrative-research-questions}
 
