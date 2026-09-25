@@ -1,0 +1,484 @@
+/*
+  Layout and type follow chojeq.com. The light palette below is that site's
+  exact colors; they are variables only so the dark theme can swap them.
+  Sections after "Content pages" cover things that site never needed:
+  long-form posts, footnotes, tables, the syllabus, and the theme toggle.
+*/
+
+:root {
+  --bg: #fff;
+  --text: #1a1a1a;
+  --text-2: #333;
+  --text-3: #555;
+  --text-4: #888;
+  --rule: #eee;
+  --line: #ccc;
+  --line-2: #ddd;
+  --note-bg: #f8f9fa;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16181d;
+  --text: #ececec;
+  --text-2: #d2d2d2;
+  --text-3: #b0b0b0;
+  --text-4: #8b9098;
+  --rule: #2a2d34;
+  --line: #4d525b;
+  --line-2: #3a3e46;
+  --note-bg: #1e2228;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+a:hover {
+  border-bottom-color: var(--text);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 1.1rem;
+  right: 1.25rem;
+  z-index: 10;
+  background: none;
+  border: 0;
+  padding: 0.4rem;
+  border-radius: 6px;
+  color: var(--text-4);
+  cursor: pointer;
+  line-height: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: inline;
+}
+
+/* Main section */
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.details {
+  flex: 1;
+}
+
+.details h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.details p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
+
+.links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+}
+
+.links a {
+  font-size: 0.9rem;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--line-2);
+}
+
+.links a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.portrait {
+  flex-shrink: 0;
+  width: 280px;
+}
+
+.portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Research section */
+.research {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.research h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.research ul + h2 {
+  margin-top: 2.5rem;
+}
+
+.paper-list {
+  list-style: none;
+}
+
+.paper-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--text-3);
+}
+
+.paper-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.paper-info {
+  flex: 1;
+}
+
+.paper-info em {
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.date {
+  flex-shrink: 0;
+  color: var(--text-4);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.paper-list li a {
+  border-bottom: none;
+}
+
+.paper-list li a:hover {
+  border-bottom: 1px solid var(--text);
+}
+
+.paper-list li strong {
+  color: var(--text);
+}
+
+.coauthors {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-4);
+  margin-top: 0.1rem;
+}
+
+.paper-links {
+  margin-left: 0.2rem;
+}
+
+.paper-links a {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  border-bottom: none;
+  margin-right: 0.15rem;
+}
+
+.paper-list li .paper-links a:hover {
+  color: var(--text);
+  border-bottom: none;
+}
+
+/* Content pages: writings, posts, teaching, contact */
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.page h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.page h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.page h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+}
+
+.page h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.page p {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  margin-bottom: 1rem;
+}
+
+.page ul:not(.paper-list),
+.page ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
+
+.page li {
+  margin-bottom: 0.5rem;
+}
+
+.page .paper-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 0;
+}
+
+.page .back {
+  margin-top: 2.5rem;
+}
+
+.page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page blockquote {
+  border-left: 3px solid var(--line);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--text-3);
+}
+
+.page code {
+  font-size: 0.85em;
+}
+
+.page pre {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.page hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+.page table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.page th,
+.page td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.page th {
+  font-weight: 600;
+  border-bottom-color: var(--line);
+}
+
+/* Individual post */
+.entry-header {
+  margin-bottom: 2rem;
+}
+
+.entry-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.entry-date,
+.entry-authors {
+  color: var(--text-4);
+  font-size: 0.85rem;
+}
+
+.entry-authors {
+  margin-top: 0.15rem;
+}
+
+.post-content sup {
+  font-size: 0.75rem;
+  line-height: 0;
+}
+
+.post-content sup a.footnote {
+  border-bottom: none;
+  color: var(--text-3);
+}
+
+.footnotes {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footnotes ol {
+  padding-left: 1.4rem;
+}
+
+.footnotes li {
+  font-size: 0.82rem;
+  color: var(--text-3);
+  margin-bottom: 0.6rem;
+}
+
+.footnotes li p {
+  display: inline;
+  margin-bottom: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+.footnotes a.reversefootnote {
+  margin-left: 0.25rem;
+  border-bottom: none;
+}
+
+.references {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.82rem;
+  color: var(--text-3);
+}
+
+/* Teaching / syllabus */
+.course-info {
+  font-size: 0.95rem;
+  color: var(--text-3);
+  margin-bottom: 2rem;
+}
+
+.week-section {
+  margin-top: 2.2rem;
+}
+
+.page .week-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.reading-list li {
+  margin-bottom: 0.6rem;
+}
+
+.prereq-note {
+  background: var(--note-bg);
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--line);
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  color: var(--text-2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    padding: 3rem 1.5rem;
+  }
+
+  .main-content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .portrait {
+    width: 200px;
+  }
+
+  .details h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .research {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+
+  .page {
+    padding: 4rem 1.5rem;
+  }
+}

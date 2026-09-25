@@ -1,0 +1,86 @@
+# Homepage publication lists. Add a paper by copying an entry.
+# credit is shown verbatim under the venue (e.g. "with A, B"). date is MM/YYYY (optional).
+
+- heading: "Preprints"
+  items:
+    - title: "Normalization of Deviance in AI Development"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2609.05749"
+      venue: "Under review"
+      credit: "with Alexander Kimpton, Daniel Graham, Yusuf Kundgol"
+      date: "09/2026"
+    - title: "Whose Alignment? Process Alignment Across Organizational Contexts"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2605.25256"
+      venue: "ICML 2026 Pluralistic Alignment Workshop"
+      credit: "with Niklas Weller"
+      date: "05/2026"
+    - title: "Representation Without Control: Testing the Realization Effect in Language Models"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2605.25151"
+      venue: "Under review"
+      credit: "with Ciarán Walsh"
+      date: "05/2026"
+    - title: "The Compulsory Imaginary: AGI and Corporate Authority"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2602.23679"
+      venue: "Preprint"
+      date: "02/2026"
+    - title: "Status Hierarchies in Language Models"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2601.17577"
+      venue: "Master's Thesis / Preprint"
+      date: "01/2026"
+    - title: "Getting out of the Big-Muddy: Escalation of Commitment in LLMs"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2508.01545"
+      venue: "Under review"
+      credit: "with Olivia Long, Paul Kröger"
+      date: "08/2025"
+    - title: "Don’t Change My View: Ideological Bias Auditing in Large Language Models"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2509.12652"
+      venue: "Under review"
+      credit: "with Paul Kröger"
+      date: "09/2025"
+    - title: "Reasoning Isn’t Enough: Examining Truth-Bias and Sycophancy in LLMs"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2506.21561"
+      venue: "ICML 2025 Workshop on Models of Human Feedback for AI Alignment (MoFA)"
+      credit: "with Olivia Long, Madhavendra Thakur"
+      date: "06/2025"
+
+- heading: "Works in Progress"
+  items:
+    - title: "Legislative Boundary-Work and the Professional Response to Artificial Intelligence"
+      venue: "Working Paper"
+      credit: "looking for co-authors"
+    - title: "The Model Compass: Linguistic Suppression as an Indicator of Democratic Backsliding"
+      venue: "Working Paper"
+      credit: "with Lauren Benjamin Mushro, Shruti Das"
+    - title: "Evaluating Moral Reasoning in Embodied Language Model Agents"
+      venue: "Working Paper (SPAR)"
+      credit: "with Roshni Lulla, Kristin Witte, Saloni Modi"
+    - title: "Underrepresented Languages in LLMs"
+      venue: "Working Paper (SPAR)"
+      credit: "with Raghav Pant, Dan Sachs"
+    - title: "Illusion of Explanatory Depth in LLMs"
+      venue: "Working Paper (SPAR)"
+      credit: "with Hayzie Chu, Andrew Xie"
+
+- heading: "Contributions as an RA"
+  items:
+    - title: "Peace from the Pulpit? Religious Appeals Do Not Outperform Secular Appeals in Reducing Partisan Animosity among American Christians"
+      links:
+        - label: "osf"
+          url: "https://osf.io/preprints/osf/pd79e_v1"
+      venue: "Under Review"
+      credit: "James Chu, Yejin Park Roberts"

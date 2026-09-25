@@ -1,17 +1,20 @@
 ---
-layout: default
-title: Blog
+layout: page
+title: Writings
 ---
-<h2 class="page-title">Blog</h2>
+<h1>Writings</h1>
 
-<div class="posts-list">
+<ul class="paper-list">
     {% for post in site.posts %}
     {% unless post.unlisted %}
-    <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
-    <div class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></div>
+    {% assign last = post.title | slice: -1 %}
+    <li>
+        <a href="{{ post.url }}"><strong>{{ post.title }}{% unless last == "." or last == "?" or last == "!" %}.{% endunless %}</strong></a>
+        <span class="date">{{ post.date | date: "%m/%Y" }}</span>
+    </li>
     {% endunless %}
     {% endfor %}
-</div>
+</ul>
 
 <!--
 Draft ideas / not yet written:
