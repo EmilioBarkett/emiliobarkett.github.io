@@ -76,12 +76,6 @@
           url: "https://github.com/EmilioBarkett/moral-dilemma-project"
       venue: "Working Paper (SPAR)"
       credit: "with Roshni Lulla, Kristin Witte, Saloni Modi"
-    - title: "Illusion of Explanatory Depth in LLMs"
-      links:
-        - label: "code"
-          url: "https://github.com/EmilioBarkett/explanatory-depth-project"
-      venue: "Working Paper (SPAR)"
-      credit: "with Hayzie Chu, Andrew Xie"
     - title: "Organizational Drift in Frontier AI Development: Evidence from Policy Revisions, Personnel Testimony, and National Strategies"
       venue: "Working Paper"
       credit: "with Alexander Kimpton, Daniel Graham, Yusuf Kundgol"
