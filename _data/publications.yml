@@ -23,6 +23,8 @@
       links:
         - label: "arxiv"
           url: "https://arxiv.org/abs/2605.25151"
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/realization-effect-project"
       venue: "Under review"
       credit: "with Ciarán Walsh"
       date: "05/2026"
@@ -75,6 +77,9 @@
       venue: "Working Paper"
       credit: "with Lauren Benjamin Mushro, Shruti Das"
     - title: "Evaluating Moral Reasoning in Embodied Language Model Agents"
+      links:
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/moral-dilemma-project"
       venue: "Working Paper (SPAR)"
       credit: "with Roshni Lulla, Kristin Witte, Saloni Modi"
     - title: "Underrepresented Languages in LLMs"
