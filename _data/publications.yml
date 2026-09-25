@@ -70,21 +70,12 @@
 
 - heading: "Works in Progress"
   items:
-    - title: "Legislative Boundary-Work and the Professional Response to Artificial Intelligence"
-      venue: "Working Paper"
-      credit: "looking for co-authors"
-    - title: "The Model Compass: Linguistic Suppression as an Indicator of Democratic Backsliding"
-      venue: "Working Paper"
-      credit: "with Lauren Benjamin Mushro, Shruti Das"
     - title: "Evaluating Moral Reasoning in Embodied Language Model Agents"
       links:
         - label: "code"
           url: "https://github.com/EmilioBarkett/moral-dilemma-project"
       venue: "Working Paper (SPAR)"
       credit: "with Roshni Lulla, Kristin Witte, Saloni Modi"
-    - title: "Underrepresented Languages in LLMs"
-      venue: "Working Paper (SPAR)"
-      credit: "with Raghav Pant, Dan Sachs"
     - title: "Illusion of Explanatory Depth in LLMs"
       links:
         - label: "code"
