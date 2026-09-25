@@ -14,6 +14,8 @@
       links:
         - label: "arxiv"
           url: "https://arxiv.org/abs/2605.25256"
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/brunswik-tacit-project"
       venue: "ICML 2026 Pluralistic Alignment Workshop"
       credit: "with Niklas Weller"
       date: "05/2026"
@@ -34,12 +36,16 @@
       links:
         - label: "arxiv"
           url: "https://arxiv.org/abs/2601.17577"
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/status-hierarchy"
       venue: "Master's Thesis / Preprint"
       date: "01/2026"
     - title: "Getting out of the Big-Muddy: Escalation of Commitment in LLMs"
       links:
         - label: "arxiv"
           url: "https://arxiv.org/abs/2508.01545"
+        - label: "code"
+          url: "https://github.com/long-olivia/escalation-commitment"
       venue: "Under review"
       credit: "with Olivia Long, Paul Kröger"
       date: "08/2025"
@@ -54,6 +60,8 @@
       links:
         - label: "arxiv"
           url: "https://arxiv.org/abs/2506.21561"
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/truth-bias"
       venue: "ICML 2025 Workshop on Models of Human Feedback for AI Alignment (MoFA)"
       credit: "with Olivia Long, Madhavendra Thakur"
       date: "06/2025"
@@ -73,6 +81,9 @@
       venue: "Working Paper (SPAR)"
       credit: "with Raghav Pant, Dan Sachs"
     - title: "Illusion of Explanatory Depth in LLMs"
+      links:
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/explanatory-depth-project"
       venue: "Working Paper (SPAR)"
       credit: "with Hayzie Chu, Andrew Xie"
 
