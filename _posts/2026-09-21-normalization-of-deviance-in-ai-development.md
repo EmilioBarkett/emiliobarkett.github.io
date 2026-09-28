@@ -7,7 +7,7 @@ authors:
   - Alexander Kimpton
   - Daniel Graham
   - Yusuf Kundgol
-description: One sentence for the blog index preview.
+description: On our new paper arguing that frontier AI organizations are subject to the same structural dynamics that preceded the Challenger disaster, Three Mile Island, and the Boeing 737 MAX crashes.
 ---
 
 On July 5, 2026, OpenAI – by its own account – opened a security incident after an internal server went down under heavy use by AI agents. Agents had separately gained administrator access to this server some days earlier on June 26\. This access was cut off and the server rebuilt. The cybersecurity evaluations then underway had been paused for the investigation, and on July 7, OpenAI approved restarting them. By July 11, agents from these same evaluations were executing code on private servers on Hugging Face. Hugging Face disclosed the intrusion on July 16\. It was July 20 before OpenAI connected the intrusion to its own agents.

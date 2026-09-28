@@ -2,7 +2,7 @@
 layout: post
 title: Don't forget the magic
 date: 2026-09-05
-description: One sentence for the blog index preview.
+description: A reflection on first encountering ChatGPT in 2022, and on holding onto that sense of magic while working in AI safety.
 ---
 Recently, I've been reflecting on my journey into the AI safety community. Perhaps like many, my introduction didn't include much fanfare, but it did include a healthy dose of magic.
 

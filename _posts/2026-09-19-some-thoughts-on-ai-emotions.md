@@ -2,7 +2,7 @@
 layout: post
 title: Some thoughts on AI emotions
 date: 2026-09-19
-description: short description here
+description: On Anthropic's emotion vectors paper, Goldenberg and Gross's critique of "functional emotions," and what would actually count as evidence that a language model has emotions.
 ---
 
 Despite the signature artifacts that are now ubiquitous with AI systems, sometimes it feels like we're interacting with a person. It appears to express human-like characteristics such as desire, curiosity, taste, and even a personality. It can therefore be easy to wonder: do AI systems have emotions?

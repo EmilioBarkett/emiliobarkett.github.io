@@ -3,7 +3,8 @@ layout: post
 title: The case for societal impacts research in the AI safety ecosystem
 date: 2026-09-22
 unlisted: true
-description: One sentence for the blog index preview.
+sitemap: false
+description: A proposal for a mentored fellowship pairing social scientists with mentors working at the intersection of the social sciences and AI safety.
 ---
 
 ## Introduction

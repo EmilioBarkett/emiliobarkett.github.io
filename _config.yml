@@ -1,6 +1,24 @@
 title: Emilio Barkett
-author: Emilio Barkett
+tagline: AI safety researcher and fieldbuilder
+description: >-
+  Emilio Barkett is an AI safety researcher and fieldbuilder working at the
+  intersection of AI safety and the social sciences, focused on empirical and
+  technical AI governance.
+author:
+  name: Emilio Barkett
+  twitter: barkgnarr
 url: "https://emiliobarkett.github.io"
+logo: /profile.jpg
+twitter:
+  username: barkgnarr
+  card: summary
+social:
+  name: Emilio Barkett
+  links:
+    - https://linkedin.com/in/emiliobarkett/
+    - https://github.com/EmilioBarkett
+    - https://x.com/barkgnarr
+    - https://scholar.google.com/citations?hl=en&user=jcWwZKkAAAAJ
 
 markdown: kramdown
 kramdown:
@@ -9,8 +27,23 @@ kramdown:
 
 permalink: /blog-posts/:year/:month/:title.html
 
+defaults:
+  # Default social-preview image for every page (Open Graph / Twitter Card).
+  - scope:
+      path: ""
+    values:
+      image: /profile.jpg
+  # Keep unlisted files out of the generated sitemap.xml - they stay reachable
+  # by direct link, but shouldn't be handed to search engines to crawl.
+  - scope:
+      path: "papers/normalization-of-deviance.pdf"
+    values:
+      sitemap: false
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - Gemfile

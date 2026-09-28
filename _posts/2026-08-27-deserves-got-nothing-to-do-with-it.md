@@ -2,7 +2,7 @@
 layout: post
 title: Deserves got nothing to do with it
 date: 2026-08-28
-description: 
+description: "On the brutality and randomness of the world, and finding resilience in playing a bad hand well."
 ---
 
 The world is a random place. Within the universe, randomness touches everything---from an asteroid obliterating a planet, to a pyroclastic flow burying a town, to being born into a supportive family, and even falling in love with the person of your dreams.[^1] In math, this can be described as stochastic, and in nature, this can be described as the brutality of The Wild.
