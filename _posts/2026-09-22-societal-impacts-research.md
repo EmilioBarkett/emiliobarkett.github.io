@@ -30,17 +30,11 @@ The present doc is being circulated to organizers of existing AIS fellowships to
 | **Underused expertise.** Social scientists bring tools that are underused in AIS, like behavioral economics, moral psychology, and organizational sociology. Currently, there’s few organizations applying these tools directly to AIS questions.[^2] | Mentors offer scoped research projects or general interest directions that fellows work through over 12 weeks, producing research output. See [Appendix](#illustrative-research-questions) for a sample of illustrative research questions. |
 | **No signal for AIS-readiness.** Social scientists have no clear way to show AIS-specific competence to hiring orgs, since existing academic credentials don't fully capture it. | Fellows leave with a completed research project and a public presentation. These are credible signals to hiring orgs. |
 
-## Progress
-
-* **August 10:** Began sketching the problem and solution.  
-* **August 18:** Discovery calls with Generator Residents to understand how they developed and built out their ideas.  
-* **September 22:** Updating the doc.
-
 ## Mission Statement
 
 SIRA exists to give social scientists a structured path to do research in the AI safety ecosystem. We aim to identify talented researchers across career stages, from undergraduates to postdocs, support their development through mentored research, and connect them with careers across research organizations and labs, so the field gains the social-scientific methods and questions it currently lacks.
 
-## [Theory of Change](#theory-of-change) {#theory-of-change}
+## Theory of Change
 
 If social scientists are given a structured path into AIS through mentored research, then they will produce relevant AIS research during the program and successfully transition into impactful careers in the field.
 
