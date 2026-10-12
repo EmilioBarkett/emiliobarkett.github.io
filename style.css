@@ -455,18 +455,245 @@ a:focus-visible {
   color: var(--text-2);
 }
 
-/* Typing charts */
+/* Typing page: interactive charts drawn by typing.js */
+:root {
+  --typing-l1: #9be9a8;
+  --typing-l2: #40c463;
+  --typing-l3: #30a14e;
+  --typing-l4: #216e39;
+  --typing-line: #2da44e;
+  --typing-tip-bg: #1f2328;
+  --typing-tip-text: #fff;
+}
+
+:root[data-theme="dark"] {
+  --typing-l1: #0e4429;
+  --typing-l2: #006d32;
+  --typing-l3: #26a641;
+  --typing-l4: #39d353;
+  --typing-line: #3fb950;
+  --typing-tip-bg: #ececec;
+  --typing-tip-text: #16181d;
+}
+
+/* Static fallback images, shown until the script draws the charts */
 .typing-chart {
   margin: 0.5rem 0 2rem;
   overflow-x: auto;
 }
 
-.typing-chart img,
-.typing-chart svg {
+.typing-chart img {
   display: block;
   width: 100%;
   min-width: 560px;
   height: auto;
+}
+
+.typing-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.typing-stat {
+  border-top: 1px solid var(--line-2);
+  padding-top: 0.6rem;
+}
+
+.typing-stat-label,
+.typing-stat-detail {
+  font-size: 0.8rem;
+  color: var(--text-4);
+}
+
+.typing-stat-value {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.typing-figure {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.typing-svg {
+  display: block;
+  overflow: visible;
+}
+
+.typing-svg:focus {
+  outline: none;
+}
+
+.typing-svg:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.typing-axis {
+  font-size: 11px;
+  fill: var(--text-4);
+}
+
+.typing-direct-label {
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--text);
+}
+
+.typing-cell {
+  stroke-width: 1px;
+}
+
+.typing-l0 {
+  fill: var(--bg);
+  stroke: var(--line-2);
+}
+
+.typing-l1 { fill: var(--typing-l1); stroke: var(--typing-l1); }
+.typing-l2 { fill: var(--typing-l2); stroke: var(--typing-l2); }
+.typing-l3 { fill: var(--typing-l3); stroke: var(--typing-l3); }
+.typing-l4 { fill: var(--typing-l4); stroke: var(--typing-l4); }
+
+.typing-cell.is-active {
+  stroke: var(--text);
+  stroke-width: 1.5px;
+}
+
+.typing-legend {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-4);
+}
+
+.typing-legend-scale {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.typing-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  border: 1px solid;
+  border-color: var(--typing-l1);
+  background: var(--typing-l1);
+}
+
+.typing-swatch:first-of-type {
+  margin-left: 4px;
+}
+
+.typing-swatch:last-of-type {
+  margin-right: 4px;
+}
+
+.typing-swatch.typing-l0 { background: var(--bg); border-color: var(--line-2); }
+.typing-swatch.typing-l2 { background: var(--typing-l2); border-color: var(--typing-l2); }
+.typing-swatch.typing-l3 { background: var(--typing-l3); border-color: var(--typing-l3); }
+.typing-swatch.typing-l4 { background: var(--typing-l4); border-color: var(--typing-l4); }
+
+.typing-ranges {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.typing-range {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+}
+
+.typing-range:hover {
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.typing-range[aria-pressed="true"] {
+  border-color: var(--text);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.typing-grid {
+  stroke: var(--rule);
+  stroke-width: 1px;
+}
+
+.typing-crosshair {
+  stroke: var(--line);
+  stroke-width: 1px;
+}
+
+.typing-line {
+  fill: none;
+  stroke: var(--typing-line);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.typing-dot {
+  fill: var(--typing-line);
+  stroke: var(--bg);
+  stroke-width: 2px;
+}
+
+.typing-dot.is-active {
+  r: 6px;
+}
+
+.typing-tip {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, calc(-100% - 8px));
+  padding: 0.45rem 0.65rem;
+  border-radius: 6px;
+  background: var(--typing-tip-bg);
+  color: var(--typing-tip-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.typing-tip-line {
+  opacity: 0.8;
+}
+
+.typing-table {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.typing-table summary {
+  cursor: pointer;
+  color: var(--text-3);
+}
+
+.typing-empty {
+  color: var(--text-4);
+}
+
+@media (max-width: 600px) {
+  .typing-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Responsive */
