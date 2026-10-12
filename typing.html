@@ -1,0 +1,45 @@
+---
+layout: page
+title: Typing
+description: "Emilio Barkett's touch typing practice: days practiced and typing speed over time."
+---
+<h1>Typing</h1>
+
+<p>My touch typing practice, tracked with a self-hosted copy of <a href="https://github.com/aradzie/keybr.com" target="_blank" rel="noopener">keybr</a>. Both charts update after each practice session, and the raw data is on <a href="https://github.com/EmilioBarkett/typing-progress" target="_blank" rel="noopener">GitHub</a>.</p>
+
+<h2>Practice</h2>
+<div class="typing-chart">
+    <img src="/typing-progress/calendar.svg" alt="Calendar of the days I practiced typing in the last year">
+</div>
+
+<h2>Speed</h2>
+<div class="typing-chart">
+    <img src="/typing-progress/speed.svg" alt="Chart of my average typing speed on each practice day">
+</div>
+
+<script>
+    // Inline the charts so they follow this site's light/dark toggle. The <img>
+    // tags above stay in place if this fails, and follow the system setting.
+    // On narrow screens the charts scroll sideways, so start at the newest end.
+    function scrollToEnd(container) {
+        container.scrollLeft = container.scrollWidth;
+    }
+    document.querySelectorAll('.typing-chart img').forEach(function (img) {
+        var container = img.parentNode;
+        img.addEventListener('load', function () { scrollToEnd(container); });
+        fetch(img.getAttribute('src'))
+            .then(function (response) {
+                if (!response.ok) throw new Error(response.statusText);
+                return response.text();
+            })
+            .then(function (text) {
+                var svg = new DOMParser().parseFromString(text, 'image/svg+xml').documentElement;
+                if (svg.nodeName !== 'svg') return;
+                svg.setAttribute('role', 'img');
+                svg.setAttribute('aria-label', img.alt);
+                img.replaceWith(document.importNode(svg, true));
+                scrollToEnd(container);
+            })
+            .catch(function () {});
+    });
+</script>

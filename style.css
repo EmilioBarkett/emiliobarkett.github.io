@@ -455,6 +455,20 @@ a:focus-visible {
   color: var(--text-2);
 }
 
+/* Typing charts */
+.typing-chart {
+  margin: 0.5rem 0 2rem;
+  overflow-x: auto;
+}
+
+.typing-chart img,
+.typing-chart svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .main {
