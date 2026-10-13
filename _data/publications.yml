@@ -1,7 +1,13 @@
 # Homepage publication lists. Add a paper by copying an entry.
 # credit is shown verbatim under the venue (e.g. "with A, B"). date is MM/YYYY (optional).
+#
+# Section rules:
+# - Peer-Reviewed Publications: accepted at a conference/workshop, or a master's thesis.
+# - Preprints: arxiv or otherwise, not (yet) reviewed.
+# - Works in Progress: underway.
+# - Contributions as an RA: papers contributed to as a research assistant.
 
-- heading: "Preprints"
+- heading: "Peer-Reviewed Publications"
   items:
     - title: "Normalization of Deviance in AI Development"
       links:
@@ -21,6 +27,26 @@
       venue: "ICML 2026 Pluralistic Alignment Workshop"
       credit: "with Niklas Weller"
       date: "05/2026"
+    - title: "Status Hierarchies in Language Models"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2601.17577"
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/status-hierarchy"
+      venue: "Master's Thesis"
+      date: "01/2026"
+    - title: "Reasoning Isn’t Enough: Examining Truth-Bias and Sycophancy in LLMs"
+      links:
+        - label: "arxiv"
+          url: "https://arxiv.org/abs/2506.21561"
+        - label: "code"
+          url: "https://github.com/EmilioBarkett/truth-bias"
+      venue: "ICML 2025 Workshop on Models of Human Feedback for AI Alignment (MoFA)"
+      credit: "with Olivia Long, Madhavendra Thakur"
+      date: "06/2025"
+
+- heading: "Preprints"
+  items:
     - title: "Representation Without Control: Testing the Realization Effect in Language Models"
       links:
         - label: "arxiv"
@@ -36,14 +62,13 @@
           url: "https://arxiv.org/abs/2602.23679"
       venue: "Preprint"
       date: "02/2026"
-    - title: "Status Hierarchies in Language Models"
+    - title: "Don’t Change My View: Ideological Bias Auditing in Large Language Models"
       links:
         - label: "arxiv"
-          url: "https://arxiv.org/abs/2601.17577"
-        - label: "code"
-          url: "https://github.com/EmilioBarkett/status-hierarchy"
-      venue: "Master's Thesis / Preprint"
-      date: "01/2026"
+          url: "https://arxiv.org/abs/2509.12652"
+      venue: "Preprint"
+      credit: "with Paul Kröger"
+      date: "09/2025"
     - title: "Getting out of the Big-Muddy: Escalation of Commitment in LLMs"
       links:
         - label: "arxiv"
@@ -53,22 +78,6 @@
       venue: "Preprint"
       credit: "with Olivia Long, Paul Kröger"
       date: "08/2025"
-    - title: "Don’t Change My View: Ideological Bias Auditing in Large Language Models"
-      links:
-        - label: "arxiv"
-          url: "https://arxiv.org/abs/2509.12652"
-      venue: "Preprint"
-      credit: "with Paul Kröger"
-      date: "09/2025"
-    - title: "Reasoning Isn’t Enough: Examining Truth-Bias and Sycophancy in LLMs"
-      links:
-        - label: "arxiv"
-          url: "https://arxiv.org/abs/2506.21561"
-        - label: "code"
-          url: "https://github.com/EmilioBarkett/truth-bias"
-      venue: "ICML 2025 Workshop on Models of Human Feedback for AI Alignment (MoFA)"
-      credit: "with Olivia Long, Madhavendra Thakur"
-      date: "06/2025"
 
 - heading: "Works in Progress"
   items:
