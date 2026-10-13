@@ -455,6 +455,31 @@ a:focus-visible {
   color: var(--text-2);
 }
 
+/* Side projects list */
+.page .side-projects li {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.side-project-summary,
+.side-project-live {
+  display: block;
+}
+
+.side-project-summary {
+  margin-top: 0.15rem;
+}
+
+.side-project-live {
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--text-4);
+}
+
+.side-project-live:empty {
+  display: none;
+}
+
 /* Typing page: interactive charts drawn by typing.js */
 :root {
   --typing-l1: #9be9a8;

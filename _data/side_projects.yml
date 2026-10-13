@@ -1,0 +1,7 @@
+# Side projects page. Add a project by copying an entry.
+# live is optional: it names a status line that the page fills in from live data.
+
+- title: "Typing"
+  url: /side-projects/typing/
+  summary: "Learning to touch type, with practice days and speed tracked automatically after each session."
+  live: typing

@@ -3,5 +3,5 @@ layout: default
 ---
 <section class="page">
     {{ content }}
-    <p class="back"><a href="/">&larr; Back</a></p>
+    <p class="back"><a href="{{ page.back | default: '/' }}">&larr; Back</a></p>
 </section>

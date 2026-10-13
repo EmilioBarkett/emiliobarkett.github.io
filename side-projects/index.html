@@ -1,0 +1,39 @@
+---
+layout: page
+title: Side Projects
+description: "Side projects by Emilio Barkett, outside of research."
+---
+<h1>Side Projects</h1>
+
+<p>Things I'm learning and building outside of research.</p>
+
+<ul class="paper-list side-projects">
+    {% for project in site.data.side_projects %}
+    <li>
+        <a href="{{ project.url }}"><strong>{{ project.title }}</strong></a>
+        <span class="side-project-summary">{{ project.summary }}</span>
+        {% if project.live %}<span class="side-project-live" data-live="{{ project.live }}"></span>{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    // Fill in each project's live status line, if it has one.
+    (function () {
+        var typing = document.querySelector('[data-live="typing"]');
+        if (!typing || !window.fetch) return;
+        fetch('/typing-progress/sessions.json', { cache: 'no-cache' })
+            .then(function (response) { return response.json(); })
+            .then(function (sessions) {
+                if (!sessions.length) return;
+                var last = sessions[sessions.length - 1];
+                var end = new Date(last.end);
+                var now = new Date();
+                var days = Math.round((new Date(now.getFullYear(), now.getMonth(), now.getDate()) -
+                    new Date(end.getFullYear(), end.getMonth(), end.getDate())) / 86400000);
+                var when = days === 0 ? 'today' : days === 1 ? 'yesterday' : days + ' days ago';
+                typing.textContent = Math.round(last.avgWpm) + ' WPM · last practiced ' + when;
+            })
+            .catch(function () {});
+    })();
+</script>
