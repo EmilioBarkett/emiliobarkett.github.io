@@ -5,7 +5,8 @@
 # - Peer-Reviewed Publications: accepted at a conference/workshop, or a master's thesis.
 # - Preprints: arxiv or otherwise, not (yet) reviewed.
 # - Works in Progress: underway.
-# - Contributions as an RA: papers contributed to as a research assistant.
+# - Other Work: anything that doesn't fit above - RA contributions (not an
+#   author; say so in credit), books, and similar.
 
 - heading: "Peer-Reviewed Publications"
   items:
@@ -103,11 +104,16 @@
       venue: "Working Paper"
       credit: "with Peiyu Chen"
 
-- heading: "Contributions as an RA"
+- heading: "Other Work"
   items:
     - title: "Peace from the Pulpit? Religious Appeals Do Not Outperform Secular Appeals in Reducing Partisan Animosity among American Christians"
       links:
         - label: "osf"
           url: "https://osf.io/preprints/osf/pd79e_v1"
       venue: "Under Review"
-      credit: "James Chu, Yejin Park Roberts"
+      credit: "Research assistance; James Chu, Yejin Park Roberts"
+    - title: "Outstanding Stories from Kiribati"
+      links:
+        - label: "book"
+          url: "https://www.barnesandnoble.com/w/outstanding-stories-from-kiribati-emilio-barkett/1140994100?ean=9798765509234"
+      venue: "Book"
