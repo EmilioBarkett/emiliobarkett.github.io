@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if page.url == "/" %}
+    <title>{{ site.title }}</title>
+    {% seo title=false %}
+    {% else %}
     {% seo %}
+    {% endif %}
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
     <script>
         (function () {
