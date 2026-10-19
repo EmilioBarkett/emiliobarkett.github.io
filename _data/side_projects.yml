@@ -5,3 +5,7 @@
   url: /side-projects/typing/
   summary: "Learning to touch type, with practice days and speed tracked automatically after each session."
   live: typing
+
+- title: "Teaching"
+  url: /teaching.html
+  summary: "Syllabus for the AI Governance Policy Fellowship, a seven-week seminar on AI safety and governance I taught at the Columbia AI Alignment Club."
