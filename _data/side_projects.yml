@@ -6,6 +6,10 @@
   summary: "Learning to touch type, with practice days and speed tracked automatically after each session."
   live: typing
 
+- title: "Kiribati–English Dictionary"
+  url: https://emiliobarkett.github.io/kiribati-english-dictionary/
+  summary: "A free, searchable Kiribati–English dictionary that works offline, built from Stephen Trussel's combined edition of four historical dictionaries."
+
 - title: "Teaching"
   url: /teaching.html
   summary: "Syllabus for the AI Governance Policy Fellowship, a seven-week seminar on AI safety and governance I taught at the Columbia AI Alignment Club."
