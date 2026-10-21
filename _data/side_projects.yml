@@ -1,6 +1,10 @@
 # Side projects page. Add a project by copying an entry.
 # live is optional: it names a status line that the page fills in from live data.
 
+- title: "Utah AI Safety Hub"
+  url: https://utahaisafety.org/
+  summary: "A community I founded for people across Utah who want advanced AI to go well, with reading groups, co-working, and events starting in Salt Lake City."
+
 - title: "Typing"
   url: /side-projects/typing/
   summary: "Learning to touch type, with practice days and speed tracked automatically after each session."
