@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Your Post Title Here
+title: Societal Impacts Research on AI (SIRA)
 date: 2026-10-22
 description: One sentence for the blog index preview.
 ---
