@@ -10,6 +10,75 @@ back: /side-projects/
 
 <div class="photo-gallery">
     {% for photo in site.data.iosepa_photos %}
-    <img src="/photography/iosepa/{{ photo.file }}" style="aspect-ratio: {{ photo.width }} / {{ photo.height }}" alt="Iosepa Project photograph" loading="lazy">
+    <img src="/photography/iosepa/{{ photo.file }}" style="aspect-ratio: {{ photo.width }} / {{ photo.height }}" alt="Iosepa Project photograph" loading="lazy" tabindex="0" role="button" aria-label="Open photograph {{ forloop.index }} of {{ forloop.length }}">
     {% endfor %}
 </div>
+
+<div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" alt="Iosepa Project photograph">
+    <div class="lightbox-nav">
+        <button type="button" id="lightbox-prev">prev</button> / <button type="button" id="lightbox-next">next</button>
+    </div>
+</div>
+
+<script>
+(function () {
+    var photos = {{ site.data.iosepa_photos | jsonify }};
+    var gallery = document.querySelector('.photo-gallery');
+    var thumbs = Array.prototype.slice.call(gallery.querySelectorAll('img'));
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var prevBtn = document.getElementById('lightbox-prev');
+    var nextBtn = document.getElementById('lightbox-next');
+    var closeBtn = document.getElementById('lightbox-close');
+    var current = -1;
+    var lastFocused = null;
+
+    function show(index) {
+        current = (index + photos.length) % photos.length;
+        var photo = photos[current];
+        lightboxImg.src = '/photography/iosepa/' + photo.file;
+        lightboxImg.style.aspectRatio = photo.width + ' / ' + photo.height;
+    }
+
+    function open(index) {
+        lastFocused = document.activeElement;
+        show(index);
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+    }
+
+    function close() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+    }
+
+    thumbs.forEach(function (img, i) {
+        img.addEventListener('click', function () { open(i); });
+        img.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                open(i);
+            }
+        });
+    });
+
+    prevBtn.addEventListener('click', function () { show(current - 1); });
+    nextBtn.addEventListener('click', function () { show(current + 1); });
+    closeBtn.addEventListener('click', close);
+
+    lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') show(current + 1);
+        if (e.key === 'ArrowLeft') show(current - 1);
+    });
+})();
+</script>
