@@ -1,0 +1,15 @@
+---
+layout: page
+title: Iosepa Project
+description: "A photo essay from the Iosepa Project, by Emilio Barkett."
+back: /side-projects/
+---
+<h1>Iosepa Project</h1>
+
+<p>Photos from the Iosepa Project.</p>
+
+<div class="photo-gallery">
+    {% for photo in site.data.iosepa_photos %}
+    <img src="/photography/iosepa/{{ photo.file }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="Iosepa Project photograph" loading="lazy">
+    {% endfor %}
+</div>

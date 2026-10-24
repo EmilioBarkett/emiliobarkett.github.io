@@ -480,6 +480,24 @@ a:focus-visible {
   display: none;
 }
 
+/* Photo gallery: breaks out of .page's 700px column to full viewport width */
+.photo-gallery {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 2.5rem;
+}
+
+.photo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.35rem;
+}
+
+.photo-gallery img:last-child {
+  margin-bottom: 0;
+}
+
 /* Typing page: interactive charts drawn by typing.js */
 :root {
   --typing-l1: #9be9a8;
