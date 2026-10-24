@@ -10,6 +10,6 @@ back: /side-projects/
 
 <div class="photo-gallery">
     {% for photo in site.data.iosepa_photos %}
-    <img src="/photography/iosepa/{{ photo.file }}" width="{{ photo.width }}" height="{{ photo.height }}" alt="Iosepa Project photograph" loading="lazy">
+    <img src="/photography/iosepa/{{ photo.file }}" style="aspect-ratio: {{ photo.width }} / {{ photo.height }}" alt="Iosepa Project photograph" loading="lazy">
     {% endfor %}
 </div>

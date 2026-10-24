@@ -480,22 +480,42 @@ a:focus-visible {
   display: none;
 }
 
-/* Photo gallery: breaks out of .page's 700px column to full viewport width */
+/* Photo gallery: breaks out of .page's 700px column to full viewport width.
+   Justified grid - flex-wrap rows at a shared height, each image's width set
+   by its own aspect ratio, flex-grow stretches each row to fill edge to edge. */
 .photo-gallery {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .photo-gallery img {
   display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: 0.35rem;
+  height: 320px;
+  flex-grow: 1;
+  object-fit: cover;
+  min-width: 160px;
 }
 
-.photo-gallery img:last-child {
-  margin-bottom: 0;
+/* Filler so the last, likely-incomplete row stays at the shared height
+   instead of stretching to fill the remaining width. */
+.photo-gallery::after {
+  content: "";
+  flex-grow: 999;
+}
+
+@media (max-width: 768px) {
+  .photo-gallery {
+    gap: 2px;
+  }
+
+  .photo-gallery img {
+    height: 140px;
+    min-width: 100px;
+  }
 }
 
 /* Typing page: interactive charts drawn by typing.js */
