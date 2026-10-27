@@ -22,5 +22,11 @@
 <body>
     {% include theme-toggle.html %}
     {{ content }}
+    <script>
+        // Only count visits on the real site, never local/preview builds.
+        if (window.location.host !== 'emiliobarkett.github.io')
+            window.goatcounter = {no_onload: true};
+    </script>
+    <script data-goatcounter="https://emiliobarkett.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
