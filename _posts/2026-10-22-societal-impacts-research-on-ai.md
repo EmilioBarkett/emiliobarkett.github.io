@@ -5,7 +5,7 @@ date: 2026-10-22
 description: One sentence for the blog index preview.
 ---
 
-**TL;DR:** I'm launching [Societal Impacts Research on AI (SIRA)](https://sirafellowship.org/), a mentored research fellowship to bring more social science talent into AI safety. We're looking for our first cohort of 15-20 social scientists, from undergrads to postdocs, to work on societal impact problems within AI safety. The first cohort is projected to start in Summer 2027. Express interest as a [fellow](https://airtable.com/appjnZXuP3QQHiV6X/pagdpah3mjgyQ4jzf/form) or [mentor](https://airtable.com/appjnZXuP3QQHiV6X/pagextnkDHw04KDgu/form), or as a host organization or funder.
+**TL;DR:** I'm launching [Societal Impacts Research on AI (SIRA)](https://sira-project.org/), a mentored research fellowship to bring more social science talent into AI safety. We're looking for our first cohort of 15-20 social scientists, from undergrads to postdocs, to work on societal impact problems within AI safety. The first cohort is projected to start in Summer 2027. Express interest as a [fellow](https://airtable.com/appjnZXuP3QQHiV6X/pagdpah3mjgyQ4jzf/form) or [mentor](https://airtable.com/appjnZXuP3QQHiV6X/pagextnkDHw04KDgu/form), or as a host organization or funder.
 
 # Introduction
 
@@ -45,9 +45,9 @@ At present, SIRA exists as an idea in a doc (and now a LW post!). Here's what yo
 
 *   **Prospective fellows:** fill out this [interest form](https://airtable.com/appjnZXuP3QQHiV6X/pagdpah3mjgyQ4jzf/form).
 *   **Prospective mentors:** fill out this [interest form](https://airtable.com/appjnZXuP3QQHiV6X/pagextnkDHw04KDgu/form).
-*   **Fellowship organizers and co-working spaces:** if SIRA sounds like it could fit as a new stream within your organization or be hosted as a standalone program at your space, please email [contact@sirafellowship.org](mailto:contact@sirafellowship.org).
-*   **Funders:** if SIRA sounds like something you believe should happen, please email [contact@sirafellowship.org](mailto:contact@sirafellowship.org).
-*   **Everyone else:** please share this post and our [website](https://sirafellowship.org/) in Slack channels and with people you know who might be interested in participating. Further, please leave a comment offering critiques and suggestions of the idea.
+*   **Fellowship organizers and co-working spaces:** if SIRA sounds like it could fit as a new stream within your organization or be hosted as a standalone program at your space, please email [contact@sira-project.org](mailto:contact@sira-project.org).
+*   **Funders:** if SIRA sounds like something you believe should happen, please email [contact@sira-project.org](mailto:contact@sira-project.org).
+*   **Everyone else:** please share this post and our [website](https://sira-project.org/) in Slack channels and with people you know who might be interested in participating. Further, please leave a comment offering critiques and suggestions of the idea.
 
 [^1]: Credit to Agus Covarrubias’s recent [X post](https://x.com/austinc3301/status/2102397827259273447?s=20) raising this topic through the lens of the Industrial Revolution. 
 
