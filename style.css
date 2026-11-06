@@ -311,6 +311,11 @@ a:focus-visible {
   margin-top: 2.5rem;
 }
 
+.page .back-top {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
 .page img {
   max-width: 100%;
   height: auto;
@@ -478,115 +483,6 @@ a:focus-visible {
 
 .side-project-live:empty {
   display: none;
-}
-
-/* Photo gallery: breaks out of .page's 700px column to full viewport width.
-   Justified grid - flex-wrap rows at a shared height, each image's width set
-   by its own aspect ratio, flex-grow stretches each row to fill edge to edge. */
-.photo-gallery {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: 2.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.photo-gallery img {
-  display: block;
-  height: 320px;
-  flex-grow: 1;
-  object-fit: cover;
-  min-width: 160px;
-  cursor: pointer;
-  filter: brightness(1);
-  transition: filter 0.15s ease;
-}
-
-.photo-gallery img:hover,
-.photo-gallery img:focus-visible {
-  filter: brightness(0.82);
-}
-
-/* Filler so the last, likely-incomplete row stays at the shared height
-   instead of stretching to fill the remaining width. */
-.photo-gallery::after {
-  content: "";
-  flex-grow: 999;
-}
-
-@media (max-width: 768px) {
-  .photo-gallery {
-    gap: 2px;
-  }
-
-  .photo-gallery img {
-    height: 140px;
-    min-width: 100px;
-  }
-}
-
-/* Photo gallery lightbox */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.lightbox[hidden] {
-  display: none;
-}
-
-.lightbox img {
-  display: block;
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
-}
-
-.lightbox-nav {
-  font-size: 0.9rem;
-  color: var(--text-3);
-}
-
-.lightbox-nav button {
-  all: unset;
-  cursor: pointer;
-  color: inherit;
-}
-
-.lightbox-nav button:hover,
-.lightbox-nav button:focus-visible {
-  color: var(--text);
-}
-
-.lightbox-close {
-  all: unset;
-  position: fixed;
-  top: 1.25rem;
-  right: 1.5rem;
-  font-size: 2rem;
-  line-height: 1;
-  color: var(--text-3);
-  cursor: pointer;
-}
-
-.lightbox-close:hover,
-.lightbox-close:focus-visible {
-  color: var(--text);
-}
-
-@media (max-width: 768px) {
-  .lightbox {
-    padding: 1rem;
-  }
 }
 
 /* Typing page: interactive charts drawn by typing.js */
@@ -856,5 +752,174 @@ a:focus-visible {
 
   .page {
     padding: 4rem 1.5rem;
+  }
+}
+
+/* Photos page: intro note + the "Woven" masonry gallery and its lightbox.
+   Ported from lukedrago.com/photos - see tools/make_photos.py and
+   photos/index.html for the matching JS. */
+.note {
+  font-style: italic;
+  color: var(--text-3);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Two layers on purpose: .gallery-bleed breaks out to the full viewport
+   width with nothing else constraining it, so the centering math is exact;
+   #gallery then caps and centers itself inside that already-full-width
+   parent. Doing both on one element doesn't work - once max-width clamps
+   the rendered width below 100vw, the margin offset (computed for a true
+   100vw box) overshoots and shoves the whole gallery to the left instead
+   of centering it. */
+.gallery-bleed {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+#gallery {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#gallery .blk {
+  position: absolute;
+}
+
+#gallery .row {
+  display: flex;
+  align-items: flex-start;
+}
+
+#gallery .stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#gallery figure {
+  margin: 0;
+  position: relative;
+  flex: none;
+}
+
+#gallery .fr {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--note-bg);
+}
+
+#gallery .fr img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#gallery .fr img.in {
+  opacity: 1;
+}
+
+#gallery .fr:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #gallery .fr img {
+    transition: none;
+  }
+}
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 70px;
+  background: var(--bg);
+}
+
+.lb.open {
+  display: flex;
+}
+
+.lb-inner {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1500px;
+  width: 100%;
+  height: 100%;
+}
+
+.lb-img {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.lb-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lb button {
+  all: unset;
+  position: absolute;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 12px;
+  color: var(--text-3);
+}
+
+.lb button:hover,
+.lb button:focus-visible {
+  color: var(--text);
+}
+
+.lb .x {
+  top: 8px;
+  right: 14px;
+}
+
+.lb .prev {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lb .next {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body.lb-open {
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .lb {
+    padding: 54px 16px 40px;
+  }
+
+  .lb .prev,
+  .lb .next {
+    display: none;
   }
 }

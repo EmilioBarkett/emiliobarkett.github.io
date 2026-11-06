@@ -1,0 +1,237 @@
+---
+layout: page
+title: Photos
+description: "Film and digital photographs by Emilio Barkett."
+back: /
+back_top: true
+redirect_from:
+  - /side-projects/iosepa-project/
+---
+<h1>Photos</h1>
+
+<div class="note">
+    <p>I've been taking photos for a while now - if you've traveled with me, you've probably seen me stop to take one.</p>
+    <p>For digital, I shoot on a Canon R + 50mm and a Canon 5D Mark II + 40mm prime lens. For film, I shoot on a Nikon FE + 28mm and 50mm lenses.</p>
+    <p>Below are some of my favorite photos.</p>
+</div>
+
+<div class="gallery-bleed"><div id="gallery"></div></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+    <button class="x" aria-label="Close">&times;</button>
+    <button class="prev" aria-label="Previous photo">&#8249;</button>
+    <button class="next" aria-label="Next photo">&#8250;</button>
+    <div class="lb-inner">
+        <div class="lb-img"><img id="lb-img" src="" alt=""></div>
+    </div>
+</div>
+
+<script>
+(function () {
+    const IMG = "/photos/img/";
+    const P = {{ site.data.photos | jsonify }} || [];
+
+    /* ---------- layout: ported from the "Woven" big & small arrangement ---------- */
+    const CFG = { tw: .99, pw: .98, gap: 12, vgap: 18, hgap: 12, bigF: .92, medF: .92, smF: .68, b1: .88, b2: .82, ps: .95, po: .04 };
+    const ar = p => p.w / p.h;
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const srcset = p => p.widths.map(w => `${IMG}${p.base}-${w}.webp ${w}w`).join(", ");
+
+    function groups() {
+        const out = []; let i = 0, bigs = 0;
+        while (i < P.length) {
+            const it = P[i];
+            if (it.size === "B") {
+                const sm = [];
+                while (sm.length < 2 && P[i + 1 + sm.length] && P[i + 1 + sm.length].size === "S") sm.push(P[i + 1 + sm.length]);
+                const side = it.side === "auto" ? (bigs % 2 ? "right" : "left") : it.side;
+                let type = sm.length === 2 ? "trio" : sm.length === 1 ? "bigsmall" : "big", items = [it, ...sm];
+                if (type === "big" && P[i + 1] && P[i + 1].size === "M") { type = "bigmed"; items.push(P[i + 1]); }
+                out.push({ type, items, side });
+                i += items.length; bigs++;
+            } else if (P[i + 1] && P[i + 1].size === it.size) { out.push({ type: it.size === "M" ? "mm" : "ss", items: [it, P[i + 1]] }); i += 2; }
+            else if (P[i + 1] && P[i + 1].size !== "B" && P[i + 1].size !== it.size) { out.push({ type: "ms", items: [it, P[i + 1]] }); i += 2; }
+            else { out.push({ type: it.size === "M" ? "m" : "s", items: [it] }); i++; }
+        }
+        return out;
+    }
+
+    let shown = 0;
+    function fig(p, w, extra = "") {
+        const k = P.indexOf(p), eager = shown++ < 4;
+        return `<figure style="width:${Math.round(w)}px;${extra}">` +
+            `<a class="fr" href="#${p.slug}" data-k="${k}">` +
+            `<img src="${IMG}${p.base}-1600.webp" srcset="${srcset(p)}" sizes="${Math.round(w)}px" width="${p.w}" height="${p.h}" alt="${esc(p.title || "Photograph")}" ` +
+            `loading="${eager ? "eager" : "lazy"}" decoding="async"${k < 2 ? ' fetchpriority="high"' : ""}></a></figure>`;
+    }
+
+    function blocks(W, VH, only, limit = Infinity) {
+        const phone = W < 600, gap = phone ? 10 : CFG.gap;
+        const maxBig = Math.min(VH * CFG.bigF, 1000), maxMed = Math.min(VH * CFG.medF, 800), maxSm = Math.min(VH * CFG.smF, 540);
+        const row = inner => `<div class="row" style="gap:${gap}px">${inner}</div>`;
+        const out = [], g = only.g, k = only.k;
+        const [a, b, c] = g.items, A = a && ar(a), B = b && ar(b), C = c && ar(c);
+        const lean = g.side === "left" ? .15 : g.side === "right" ? .85 : (k % 2 ? .75 : .25);
+        if (g.type === "trio") {
+            if (phone) {
+                const wb = Math.min(W, A * maxBig); out.push({ w: wb, h: wb / A, html: fig(a, wb), side: g.side === "left" ? 0 : 1 });
+                const h2 = (W * .92 - gap) / (B + C), w2 = B * h2 + C * h2 * .9 + gap;
+                out.push({ w: w2, h: h2 * 1.04, html: row(fig(b, B * h2) + fig(c, C * h2 * .9, `margin-top:${Math.round(h2 * .14)}px`)), side: g.side === "left" ? 1 : 0 });
+                return out;
+            }
+            const Wt = W * CFG.tw, kS = 1 / B + 1 / C;
+            let ws = (Wt - gap - A * gap) / (A * kS + 1);
+            ws = Math.max(Wt * .2, Math.min(Wt * .38, ws));
+            let wb = Wt - gap - ws, hb = wb / A;
+            if (hb > maxBig) { hb = maxBig; wb = hb * A; ws = Wt - gap - wb; }
+            const wsFit = (hb - gap) / kS, stackW = wb + gap + Math.min(ws, wsFit);
+            const r1 = CFG.b1, r2 = CFG.b2;
+            const hbB = Math.min(maxBig, (Wt - 2 * gap) / (A + B * r1 + C * r2)), wbB = hbB * A;
+            const h1 = hbB * r1, h2 = hbB * r2, besideW = wbB + 2 * gap + B * h1 + C * h2;
+            const wsS = Math.min(ws, wsFit);
+            const fillStack = (wb * hb + wsS * wsS / B + wsS * .84 * wsS * .84 / C) / (Wt * hb);
+            const fillBeside = (wbB * hbB + B * h1 * h1 + C * h2 * h2) / (Wt * hbB);
+            const besideGood = A < 1.4 && fillBeside > fillStack + .02;
+            if (wsFit >= Wt * .16 && !besideGood) {
+                ws = Math.min(ws, wsFit);
+                const big = fig(a, wb);
+                const stack = `<div class="stack" style="width:${Math.round(ws)}px;height:${Math.round(hb)}px">${fig(b, ws)}${fig(c, ws * .84, `align-self:${g.side === "left" ? "flex-end" : "flex-start"}`)}</div>`;
+                out.push({ w: wb + gap + ws, h: hb, html: row(g.side === "left" ? big + stack : stack + big), side: lean });
+            } else if (besideGood) {
+                const big = fig(a, wbB);
+                const s1 = fig(b, B * h1), s2 = fig(c, C * h2, `margin-top:${Math.round(hbB - h2)}px`);
+                out.push({ w: besideW, h: hbB, html: row(g.side === "left" ? big + s1 + s2 : s2 + s1 + big), side: lean });
+            } else {
+                wb = Math.min(Wt * .86, maxBig * A); out.push({ w: wb, h: wb / A, html: fig(a, wb), side: lean });
+                const hs = Math.min(maxSm, Math.max(wb / A * .7, maxSm * .8), (Wt - gap) / (B + C * .85));
+                out.push({ w: B * hs + C * hs * .85 + gap, h: hs * 1.05, html: row(fig(b, B * hs) + fig(c, C * hs * .85, `margin-top:${Math.round(hs * .2)}px`)), side: 1 - lean });
+            }
+        }
+        if (g.type === "bigsmall") {
+            if (phone) { const wb = Math.min(W, A * maxBig), ws = Math.min(W * .62, B * maxSm); out.push({ w: wb, h: wb / A, html: fig(a, wb), side: 0 }, { w: ws, h: ws / B, html: fig(b, ws), side: g.side === "left" ? 1 : 0 }); return out; }
+            const Wt = W * .84;
+            let wb = (Wt - gap) / (1 + .58 * B / A), hb = wb / A;
+            if (hb > maxBig) { hb = maxBig; wb = hb * A; }
+            const ws = Math.min(.58 * hb * B, Wt * .4), hs = ws / B;
+            const big = fig(a, wb), s = fig(b, ws, `margin-top:${Math.round(hb - hs)}px`);
+            out.push({ w: wb + gap + ws, h: hb, html: row(g.side === "left" ? big + s : s + big), side: lean });
+        }
+        if (g.type === "bigmed") {
+            if (phone) { const wb = Math.min(W, A * maxBig), wm = Math.min(W * .78, B * maxMed); out.push({ w: wb, h: wb / A, html: fig(a, wb), side: 0 }, { w: wm, h: wm / B, html: fig(b, wm), side: g.side === "left" ? 1 : 0 }); return out; }
+            const Wt = W * CFG.tw;
+            let hb = Math.min(maxBig, (Wt - gap) / (A + B * .8)), wb = hb * A;
+            const r = Math.min(.92, Math.max(.8, (Wt - gap - wb) / B / hb));
+            const hm = hb * r, wm = hm * B;
+            const big = fig(a, wb), m = fig(b, wm, `margin-top:${Math.round(g.side === "left" ? hb - hm : 0)}px`);
+            out.push({ w: wb + gap + wm, h: hb, html: row(g.side === "left" ? big + m : m + big), side: lean });
+        }
+        if (g.type === "ms") {
+            const Wt = Math.min(W * (phone ? 1 : CFG.pw), limit), r = .7, aM = a.size === "M", rA = aM ? 1 : r, rB = aM ? r : 1;
+            let h = Math.min((Wt - gap) / (A * rA + B * rB), maxMed);
+            const ha = h * rA, hb2 = h * rB;
+            out.push({ w: A * ha + B * hb2 + gap, h, html: row(fig(a, A * ha, `margin-top:${Math.round(aM ? 0 : h - ha)}px`) + fig(b, B * hb2, `margin-top:${Math.round(aM ? h - hb2 : 0)}px`)), side: k % 2 ? .8 : .2 });
+        }
+        if (g.type === "big") { const w = Math.min(W * (phone ? 1 : .78), A * maxBig); out.push({ w, h: w / A, html: fig(a, w), side: lean }); }
+        if (g.type === "mm") {
+            const Wt = Math.min(W * (phone ? 1 : CFG.pw), limit), s2 = CFG.ps, po = CFG.po;
+            let h = (Wt - gap) / (A + B * s2); h = Math.min(h, maxMed);
+            out.push({ w: A * h + B * h * s2 + gap, h: h * Math.max(1, s2 + po), html: row(fig(a, A * h) + fig(b, B * h * s2, `margin-top:${Math.round(h * po)}px`)), side: k % 2 ? .8 : .2 });
+        }
+        if (g.type === "ss") {
+            const Wt = Math.min(W * (phone ? .9 : .5), limit);
+            let h = (Wt - gap) / (A + B); h = Math.min(h, maxSm);
+            out.push({ w: (A + B) * h + gap, h: h * 1.2, html: row(fig(a, A * h) + fig(b, B * h, `margin-top:${Math.round(h * .2)}px`)), side: k % 2 ? .7 : .3 });
+        }
+        if (g.type === "m") { const w = Math.min(W * (phone ? .9 : .5), A * maxMed, limit), end = g.items[0] === P[P.length - 1]; out.push({ w, h: w / A, html: fig(a, w), side: end ? .5 : k % 2 ? .8 : .2 }); }
+        if (g.type === "s") { const w = Math.min(W * (phone ? .62 : .4), A * maxSm, limit); out.push({ w, h: w / A, html: fig(a, w), side: k % 2 ? .85 : .15 }); }
+        return out;
+    }
+
+    function layout(W, VH) {
+        shown = 0;
+        const phone = W < 600, caps = P.some(p => p.title), hgap = phone ? 10 : CFG.hgap;
+        const vgap = caps ? (phone ? 34 : CFG.vgap) : (phone ? 10 : CFG.gap), capH = caps ? 22 : 0;
+        const sky = new Float32Array(Math.ceil(W) + 2);
+        const top = (x, w) => { let m = 0; for (let q = Math.max(0, Math.floor(x)); q < Math.min(W, Math.ceil(x + w)); q++) m = Math.max(m, sky[q]); return m; };
+        let html = "", prevTop = 0, bottom = 0, last = null;
+        groups().forEach((g, k) => {
+            let lim = Infinity;
+            if (!phone && last && ["mm", "ss", "ms", "m", "s"].includes(g.type)) {
+                const free = Math.max(last.x, W - last.x - last.w) - hgap;
+                if (free >= W * .22) lim = free - 4;
+            }
+            blocks(W, VH, { g, k }, lim).forEach(b => {
+                b.w = Math.min(b.w, W);
+                const pref = (W - b.w) * b.side;
+                const cands = [pref, 0, W - b.w, (W - b.w) / 2, (W - b.w) * .25, (W - b.w) * .75].map(x => ({ x, y: Math.max(top(x, b.w), prevTop) }));
+                const best = Math.min(...cands.map(c => c.y));
+                const pick = cands.filter(c => c.y <= best + 24).sort((p, q) => Math.abs(p.x - pref) - Math.abs(q.x - pref))[0];
+                const y = pick.y, x = Math.round(pick.x);
+                for (let q = Math.max(0, x - hgap); q < Math.min(W, x + b.w + hgap); q++) sky[q] = y + b.h + capH + vgap;
+                html += `<div class="blk" style="left:${x}px;top:${Math.round(y)}px;width:${Math.round(b.w)}px">${b.html}</div>`;
+                prevTop = y; bottom = Math.max(bottom, y + b.h + capH); last = { x, w: b.w };
+            });
+        });
+        return `<div style="position:relative;height:${Math.round(bottom)}px">${html}</div>`;
+    }
+
+    const gallery = document.getElementById("gallery");
+    let lastW = 0, VH = 0;
+    function render() {
+        const W = gallery.clientWidth;
+        if (Math.abs(W - lastW) < 2) return;
+        lastW = W; VH = Math.max(window.innerHeight, 520);
+        gallery.innerHTML = layout(W, VH);
+        gallery.querySelectorAll(".fr img").forEach(img => {
+            if (img.complete && img.naturalWidth) img.classList.add("in");
+            else img.addEventListener("load", () => img.classList.add("in"), { once: true });
+        });
+    }
+    render();
+    let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(render, 120); });
+
+    /* ---------- lightbox: per-photo links (#slug), arrows, swipe, Esc ---------- */
+    const lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img");
+    let cur = -1, opener = null;
+    function show(k) {
+        cur = (k + P.length) % P.length; const p = P[cur];
+        lbImg.src = `${IMG}${p.base}-1600.webp`;
+        lbImg.srcset = srcset(p);
+        lbImg.sizes = "(max-width: 800px) 100vw, calc(100vw - 140px)";
+        lbImg.alt = esc(p.title || "Photograph");
+        lbImg.width = p.w; lbImg.height = p.h;
+        [cur - 1, cur + 1].forEach(j => { const q = P[(j + P.length) % P.length]; new Image().src = `${IMG}${q.base}-1600.webp`; });
+        if (location.hash !== "#" + p.slug) history.replaceState(null, "", "#" + p.slug);
+        if (!lb.classList.contains("open")) { lb.classList.add("open"); document.body.classList.add("lb-open"); lb.querySelector(".x").focus({ preventScroll: true }); }
+    }
+    function close() {
+        lb.classList.remove("open"); document.body.classList.remove("lb-open"); cur = -1;
+        history.replaceState(null, "", location.pathname + location.search);
+        if (opener) opener.focus({ preventScroll: true });
+    }
+    gallery.addEventListener("click", e => { const a = e.target.closest(".fr"); if (!a) return; e.preventDefault(); opener = a; show(+a.dataset.k); });
+    lb.addEventListener("click", e => {
+        const t = e.target;
+        if (t.closest(".x") || t === lb || t.classList.contains("lb-inner") || t.classList.contains("lb-img")) close();
+        else if (t.closest(".prev")) show(cur - 1);
+        else if (t.closest(".next")) show(cur + 1);
+    });
+    document.addEventListener("keydown", e => {
+        if (cur < 0) return;
+        if (e.key === "Escape") close();
+        if (e.key === "ArrowLeft") show(cur - 1);
+        if (e.key === "ArrowRight") show(cur + 1);
+    });
+    let tx = null, ty = null;
+    lb.addEventListener("touchstart", e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+    lb.addEventListener("touchend", e => {
+        if (tx === null) return;
+        const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(cur + (dx < 0 ? 1 : -1));
+        tx = ty = null;
+    });
+    const fromHash = () => { const k = P.findIndex(p => "#" + p.slug === location.hash); if (k >= 0) show(k); };
+    addEventListener("hashchange", fromHash);
+    fromHash();
+})();
+</script>

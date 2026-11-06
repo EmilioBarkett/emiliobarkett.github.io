@@ -2,6 +2,11 @@
 layout: default
 ---
 <section class="page">
+    {% if page.back_top %}
+    <p class="back back-top"><a href="{{ page.back | default: '/' }}">&larr; Back</a></p>
+    {{ content }}
+    {% else %}
     {{ content }}
     <p class="back"><a href="{{ page.back | default: '/' }}">&larr; Back</a></p>
+    {% endif %}
 </section>

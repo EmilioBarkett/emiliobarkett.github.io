@@ -1,0 +1,347 @@
+# Photos page manifest. size: B/M/S controls layout weight; side:
+# left/right/auto leans a big photo's companions. Hand-edit freely -
+# regenerating with tools/make_photos.py overwrites this file, so make
+# size/side edits here only after you're happy with the photo set.
+
+- slug: "1"
+  base: "p-00c1aee7"
+  w: 6379
+  h: 3588
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: 085A3455.jpg
+- slug: "2"
+  base: "p-d493278b"
+  w: 4160
+  h: 6240
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_6652.jpg
+- slug: "3"
+  base: "p-00693c4a"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: 085A3443.jpg
+- slug: "4"
+  base: "p-0283da0c"
+  w: 5231
+  h: 3487
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_2335.jpg
+- slug: "5"
+  base: "p-5f56d632"
+  w: 8320
+  h: 12480
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_7294-Enhanced.jpg
+- slug: "6"
+  base: "p-3f9f887f"
+  w: 5616
+  h: 3744
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_1137.jpg
+- slug: "7"
+  base: "p-1a3e9c52"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A5318.jpg
+- slug: "8"
+  base: "p-0d904218"
+  w: 6720
+  h: 3518
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: 085A1783.jpg
+- slug: "9"
+  base: "p-5ebc76bb"
+  w: 4160
+  h: 6240
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_0060.jpg
+- slug: "10"
+  base: "p-5d8ece81"
+  w: 3744
+  h: 5616
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_1576.jpg
+- slug: "11"
+  base: "p-d7757166"
+  w: 5616
+  h: 3159
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_0475.jpg
+- slug: "12"
+  base: "p-eba5a220"
+  w: 6720
+  h: 3518
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A1764.jpg
+- slug: "13"
+  base: "p-a75d98e3"
+  w: 6720
+  h: 3780
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: 085A3306.jpg
+- slug: "14"
+  base: "p-33548e3e"
+  w: 6252
+  h: 4168
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A7024.jpg
+- slug: "15"
+  base: "p-53284fc6"
+  w: 6720
+  h: 3518
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A1607.jpg
+- slug: "16"
+  base: "p-c6773809"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: 2023_01_12_Sunset_Drive-093.jpg
+- slug: "17"
+  base: "p-d30450ab"
+  w: 4480
+  h: 6720
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A9221.jpg
+- slug: "18"
+  base: "p-3441030d"
+  w: 1791
+  h: 1188
+  widths: [800, 1600, 1791]
+  size: "S"
+  side: "auto"
+  medium: "film"
+  # source: 18670015.jpg
+- slug: "19"
+  base: "p-a8da1eff"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A6197.jpg
+- slug: "20"
+  base: "p-4bfee094"
+  w: 6720
+  h: 3518
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: JesseKatEngagements-132.jpg
+- slug: "21"
+  base: "p-dbaa947d"
+  w: 3527
+  h: 5290
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_1904.jpg
+- slug: "22"
+  base: "p-d943cd86"
+  w: 3701
+  h: 5551
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_0236.jpg
+- slug: "23"
+  base: "p-d6981eed"
+  w: 4492
+  h: 6774
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "film"
+  # source: 000008870011.jpg
+- slug: "24"
+  base: "p-413b831a"
+  w: 6138
+  h: 4092
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_8690.jpg
+- slug: "25"
+  base: "p-ccdfec5a"
+  w: 6720
+  h: 3780
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A5469.jpg
+- slug: "26"
+  base: "p-ddf635f7"
+  w: 6671
+  h: 4447
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: 085A6417.jpg
+- slug: "27"
+  base: "p-fbca5c1a"
+  w: 6774
+  h: 4492
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "film"
+  # source: 000074490014.jpg
+- slug: "28"
+  base: "p-644dc041"
+  w: 5938
+  h: 3959
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_8152.jpg
+- slug: "29"
+  base: "p-902e1f18"
+  w: 3665
+  h: 5497
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: IMG_0548.jpg
+- slug: "30"
+  base: "p-fd083e69"
+  w: 1791
+  h: 1188
+  widths: [800, 1600, 1791]
+  size: "M"
+  side: "auto"
+  medium: "film"
+  # source: 18670020.jpg
+- slug: "31"
+  base: "p-f39e84ec"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: 085A9979.jpg
+- slug: "32"
+  base: "p-b5aee7c4"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A2728.jpg
+- slug: "33"
+  base: "p-043b0d12"
+  w: 6899
+  h: 10349
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A3057-Enhanced.jpg
+- slug: "34"
+  base: "p-987d2dba"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: 085A5485.jpg
+- slug: "35"
+  base: "p-f323c6b4"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "digital"
+  # source: 085A6077-Enhanced-NR.jpg
+- slug: "36"
+  base: "p-661323bc"
+  w: 6628
+  h: 4419
+  widths: [800, 1600, 2400]
+  size: "B"
+  side: "auto"
+  medium: "digital"
+  # source: 085A6411.jpg
+- slug: "37"
+  base: "p-f38306ec"
+  w: 2938
+  h: 1948
+  widths: [800, 1600, 2400]
+  size: "M"
+  side: "auto"
+  medium: "film"
+  # source: 000074470024.jpg
+- slug: "38"
+  base: "p-ad141aa6"
+  w: 6720
+  h: 4480
+  widths: [800, 1600, 2400]
+  size: "S"
+  side: "auto"
+  medium: "digital"
+  # source: 085A2752.jpg
