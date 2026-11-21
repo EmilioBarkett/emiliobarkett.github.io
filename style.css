@@ -108,7 +108,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 4rem;
-  max-width: 940px;
+  max-width: 900px;
   width: 100%;
 }
 
@@ -151,6 +151,11 @@ a:focus-visible {
 .portrait {
   flex-shrink: 0;
   width: 320px;
+  /* Negative margin keeps this box's layout footprint at the original 280px
+     (so centering/.details width are unaffected), while the extra 40px of
+     actual width overflows visually to the right instead of pushing the
+     whole centered block - and with it the bio text - further left. */
+  margin-right: -40px;
 }
 
 .portrait img {
@@ -739,6 +744,9 @@ a:focus-visible {
 
   .portrait {
     width: 230px;
+    /* Stacked layout here, so there's no row to overflow out of -
+       drop the desktop-only negative margin or it just throws off centering. */
+    margin-right: 0;
   }
 
   .details h1 {
